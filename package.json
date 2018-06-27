@@ -1,0 +1,25 @@
+{
+  "name": "nope",
+  "version": "1.0.0",
+  "description": "resturant finder app",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/five3183/project-2.git"
+  },
+  "keywords": [
+    "resturants",
+    "reviews",
+    "nope"
+  ],
+  "author": "team-berlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/five3183/project-2/issues"
+  },
+  "homepage": "https://github.com/five3183/project-2#readme"
+}
