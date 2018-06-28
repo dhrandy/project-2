@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")))
 // **** BODYPARSER*****
 app.use(bodyParser.json())
 
-// ****USERS****
+// ****ROUTES****
 app.use("/routes", routes)
 
 // **** INDEX ROUTE ****
