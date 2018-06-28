@@ -3,7 +3,6 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var path = require("path")
 var cors = require("cors")
-var passport = require("passport")
 var connection = require("./config/database")
 
 // ****CONNECTION****
