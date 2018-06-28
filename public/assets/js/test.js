@@ -1,0 +1,1 @@
+$('.jstest').html('JavaScript works.');
