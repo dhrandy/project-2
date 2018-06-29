@@ -1,9 +1,21 @@
 module.exports = function(sequelize, DataTypes) {
 
 var Restaurant = sequelize.define("restaurant", {
-  name: DataTypes.STRING,
-  location: DataTypes.STRING,
-  status: DataTypes.BOOLEAN
+  name: { 
+    type: DataTypes.STRING,
+    allowNull: false,
+    primaryKey: true,
+  },
+  
+  location: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  
+  status: { 
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
 
 });
 return Restaurant;
