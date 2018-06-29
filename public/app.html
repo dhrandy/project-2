@@ -40,14 +40,13 @@
             <i class="location arrow icon"></i>
             Location
         </button>
-        <p id="restaurant-name" class="ui medium header">Hickory Tavern</p>
-        <div>
-            <button class="ui compact red button">BUSY</button>
-            <button class="ui compact green button">NOT BUSY</button>
-        </div>
-        </br>
-        <span>Stars:</span>
-        <div class="ui rating" id="over-all" data-rating="3" data-max-rating="5"></div>
+        <p id = "restaurant-name" class = "ui medium header">Hickory Tavern</p>
+        <!-- <div>
+                <button class="ui compact red button">BUSY</button>
+                <button class="ui compact green button">NOT BUSY</button>
+        </div> -->
+    </br>
+        <span>Stars:</span> <div class="ui rating" id = "over-all" data-rating="3" data-max-rating="5"></div>
         <span> | </span>
         <span id="restaurant-address">9010 Harris Corners Pkwy, Charlotte, NC</span>
     </div>
@@ -123,17 +122,23 @@
 
             //****LISTEN FOR MAP CLICK TO ADD MARKER****
 
-            google.maps.event.addListener(map, "click", function (event) {
-                addMarker({ coords: event.latLng })
-            })
-
-            var markers = [
-                {
-                    coords: { lat: 35.2271, lng: -80.8431 },
-                    image: "",
-                    content: "TEST 1"
-                }
-            ]
+        // google.maps.event.addListener(map, "click", function(event) {
+        //     addMarker({coords:event.latLng})
+        // })
+        
+        var markers = [
+            {
+                coords:{lat: 35.2271, lng: -80.8431},
+                image: "",
+                content:`
+                <div>
+                    <h1>SOME PLACE</h1>
+                    <button class="ui compact red button">BUSY</button>
+                    <button class="ui compact green button">NOT BUSY</button>
+                </div>
+                `
+            }
+        ]
 
             for (var i = 0; i < markers.length; i++) {
                 addMarker(markers[i])
@@ -164,16 +169,15 @@
 
                 //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
 
-                // marker.addListener("click", function() {
-                //     infoWindow.open(map, marker)
-                // })
-            }
+            marker.addListener("click", function() {
+                infoWindow.open(map, marker)
+            })
+        }
 
         }//****end of map****
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBltiaq3-16bS18_EeBKwIkDfQyCbrBo6Y&callback=initMap" async
-        defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=XXX&callback=initMap"async defer></script>
 </body>
 
 </html>
