@@ -4,11 +4,7 @@ var methodOverride = require("method-override");
 var app = express();
 var db = require("./models/index");
 var path = require("path")
-
 var routes = require("./controllers/routes")
-
-
-
 
 app.use(methodOverride("_method"));
 
