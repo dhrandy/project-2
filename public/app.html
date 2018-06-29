@@ -11,6 +11,19 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" />
     <script type="text/javascript" src="../semantic/dist/semantic.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+
+        #map {
+            height: 200px;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+    </style>
+
+
 </head>
 
 <body>
@@ -40,9 +53,12 @@
     </div>
 
     <div class="ui container container-margin">
-        <div class="map">
-            <img src="assets/imgs/maps.jpg" class="mapimg">
-        </div>
+        <div id="map"></div>
+
+        <!-- <div class = "map">
+            <img src = "assets/imgs/maps.jpg" class = "mapimg">
+        </div> -->
+
     </div>
 
     <br>
@@ -92,8 +108,72 @@
 
         </div>
     </div>
-    </div>
 
+    <script>
+        var map
+        function initMap() {
+            //**** DEFAULT ZOOM FOR MAP****
+
+            var options = {
+                zoom: 8,
+                center: { lat: 35.2271, lng: -80.8431 }
+            }
+
+            map = new google.maps.Map(document.getElementById('map'), options)
+
+            //****LISTEN FOR MAP CLICK TO ADD MARKER****
+
+            google.maps.event.addListener(map, "click", function (event) {
+                addMarker({ coords: event.latLng })
+            })
+
+            var markers = [
+                {
+                    coords: { lat: 35.2271, lng: -80.8431 },
+                    image: "",
+                    content: "TEST 1"
+                }
+            ]
+
+            for (var i = 0; i < markers.length; i++) {
+                addMarker(markers[i])
+            }
+
+            function addMarker(props) {
+
+                // ****CHECK FOR ICON****
+
+                if (props.icon) {
+                    marker.setIcon(props.icon)
+                }
+
+                // ****VALIDATE CONTENT****
+
+                if (props.content) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    })
+                }
+
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                    icon: props.image,
+                    content: props.content
+                })
+
+                //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
+
+                // marker.addListener("click", function() {
+                //     infoWindow.open(map, marker)
+                // })
+            }
+
+        }//****end of map****
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBltiaq3-16bS18_EeBKwIkDfQyCbrBo6Y&callback=initMap" async
+        defer></script>
 </body>
 
 </html>
