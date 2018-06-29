@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,40 +15,44 @@
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
+
         #map {
-          height: 200px;
+            height: 200px;
         }
+
         /* Optional: Makes the sample page fill the window. */
     </style>
 
 
 </head>
+
 <body>
-    <div class = "ui container fluid">
-        <div class = "ui menu navbar">
-            <a href class = "brand item">Nope</a>
-            <a href class = "active item">App</a>
-            <a href class = "item">Map</a>
-            <a href class = "item">About</a>
+    <div class="ui container fluid">
+        <div class="ui menu navbar">
+            <a href class="brand item">Nope</a>
+            <a href class="active item">App</a>
+            <a href class="item">Map</a>
+            <a href class="item">About</a>
         </div>
     </div>
-    <div class = "ui container container-margin">
-        <button class = "ui labeled icon button">
-            <i class = "location arrow icon"></i>
+    <div class="ui container container-margin">
+        <button class="ui labeled icon button">
+            <i class="location arrow icon"></i>
             Location
         </button>
-        <p id = "restaurant-name" class = "ui medium header">Hickory Tavern</p>
+        <p id="restaurant-name" class="ui medium header">Hickory Tavern</p>
         <div>
-                <button class="ui compact red button">BUSY</button>
-                <button class="ui compact green button">NOT BUSY</button>
+            <button class="ui compact red button">BUSY</button>
+            <button class="ui compact green button">NOT BUSY</button>
         </div>
-    </br>
-        <span>Stars:</span> <div class="ui rating" id = "over-all" data-rating="3" data-max-rating="5"></div>
+        </br>
+        <span>Stars:</span>
+        <div class="ui rating" id="over-all" data-rating="3" data-max-rating="5"></div>
         <span> | </span>
-        <span id = "restaurant-address">9010 Harris Corners Pkwy, Charlotte, NC</span>
+        <span id="restaurant-address">9010 Harris Corners Pkwy, Charlotte, NC</span>
     </div>
-    
-    <div class = "ui container container-margin">
+
+    <div class="ui container container-margin">
         <div id="map"></div>
 
         <!-- <div class = "map">
@@ -58,104 +63,117 @@
 
     <br>
     <br>
-    <div class = "ui container">
-        <div class = "ui grid">
-            <div class = "ui row collapse">
-                <div class = "ui column">Food:</div>
-                <div class = "ui column"><span class="ui rating r-space" id = "food" data-rating="5" data-max-rating="5"></span></div>
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="ui row collapse">
+                <div class="ui column">Food:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="food" data-rating="5" data-max-rating="5"></span>
+                </div>
             </div>
 
-            <div class = "ui row collapse">
-                <div class = "ui column">Drinks:</div>
-                <div class = "ui column"><span class="ui rating r-space" id = "drinks" data-rating="5" data-max-rating="5"></span></div>
+            <div class="ui row collapse">
+                <div class="ui column">Drinks:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="drinks" data-rating="5" data-max-rating="5"></span>
+                </div>
             </div>
 
-            <div class = "ui row collapse">
-                <div class = "ui column">Atmosphere: </div>
-                <div class = "ui column"><span class="ui rating r-space" id = "atmosphere" data-rating="4" data-max-rating="5"></span></div>
+            <div class="ui row collapse">
+                <div class="ui column">Atmosphere: </div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="atmosphere" data-rating="4" data-max-rating="5"></span>
+                </div>
             </div>
 
-            <div class = "ui row collapse">
-                <div class = "ui column">Staff:</div>
-                <div class = "ui column"><span class="ui rating r-space" id = "staff" data-rating="5" data-max-rating="5"></span></div>
+            <div class="ui row collapse">
+                <div class="ui column">Staff:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="staff" data-rating="5" data-max-rating="5"></span>
+                </div>
             </div>
 
-            <div class = "ui row collapse">
-                <div class = "ui column">Cleanliness:</div>
-                <div class = "ui column"><span class="ui rating r-space" id = "cleanliness" data-rating="4" data-max-rating="5"></span></div>
+            <div class="ui row collapse">
+                <div class="ui column">Cleanliness:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="cleanliness" data-rating="4" data-max-rating="5"></span>
+                </div>
             </div>
-            <div class = "ui row collapse">
-                <div class = "ui right column">Parking:</div>
-                <div class = "ui column"><span class="ui rating r-space" id = "parking" data-rating="5" data-max-rating="5"></span></div>
+            <div class="ui row collapse">
+                <div class="ui right column">Parking:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="parking" data-rating="5" data-max-rating="5"></span>
+                </div>
             </div>
 
-            </div>
         </div>
     </div>
 
     <script>
-    var map
-    function initMap() {
-        //**** DEFAULT ZOOM FOR MAP****
+        var map
+        function initMap() {
+            //**** DEFAULT ZOOM FOR MAP****
 
-        var options = {
-            zoom:8,
-            center: {lat: 35.2271, lng: -80.8431}
-        }
-
-        map = new google.maps.Map(document.getElementById('map'), options)
-
-        //****LISTEN FOR MAP CLICK TO ADD MARKER****
-
-        google.maps.event.addListener(map, "click", function(event) {
-            addMarker({coords:event.latLng})
-        })
-        
-        var markers = [
-            {
-                coords:{lat: 35.2271, lng: -80.8431},
-                image: "",
-                content:"TEST 1"
-            }
-        ]
-
-        for(var i = 0; i < markers.length; i++) {
-                addMarker(markers[i])
-        }
-
-        function addMarker(props){
-
-            // ****CHECK FOR ICON****
-
-            if(props.icon) {
-                marker.setIcon(props.icon)
+            var options = {
+                zoom: 8,
+                center: { lat: 35.2271, lng: -80.8431 }
             }
 
-            // ****VALIDATE CONTENT****
+            map = new google.maps.Map(document.getElementById('map'), options)
 
-            if(props.content) {
-                var infoWindow = new google.maps.InfoWindow ({
-                content: props.content
-                })
-            }
+            //****LISTEN FOR MAP CLICK TO ADD MARKER****
 
-            var marker = new google.maps.Marker ({
-                position: props.coords,
-                map: map,
-                icon: props.image,
-                content: props.content
+            google.maps.event.addListener(map, "click", function (event) {
+                addMarker({ coords: event.latLng })
             })
 
-            //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
+            var markers = [
+                {
+                    coords: { lat: 35.2271, lng: -80.8431 },
+                    image: "",
+                    content: "TEST 1"
+                }
+            ]
 
-            // marker.addListener("click", function() {
-            //     infoWindow.open(map, marker)
-            // })
-        }
+            for (var i = 0; i < markers.length; i++) {
+                addMarker(markers[i])
+            }
 
-    }//****end of map****
+            function addMarker(props) {
+
+                // ****CHECK FOR ICON****
+
+                if (props.icon) {
+                    marker.setIcon(props.icon)
+                }
+
+                // ****VALIDATE CONTENT****
+
+                if (props.content) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    })
+                }
+
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                    icon: props.image,
+                    content: props.content
+                })
+
+                //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
+
+                // marker.addListener("click", function() {
+                //     infoWindow.open(map, marker)
+                // })
+            }
+
+        }//****end of map****
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBltiaq3-16bS18_EeBKwIkDfQyCbrBo6Y&callback=initMap"async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBltiaq3-16bS18_EeBKwIkDfQyCbrBo6Y&callback=initMap" async
+        defer></script>
 </body>
+
 </html>
