@@ -11,14 +11,6 @@ app.use(methodOverride("_method"));
 // ****PORT****
 var PORT = process.env.PORT || 3000
 
-// **** DATABASE CONNECTION ****
-
-db.sequelize.sync({force: true}).then(function() {
-    app.listen(PORT, function() {
-        console.log("NOPE listening on PORT " + PORT)
-    });
-});
-
 // **** SET STATIC FOLDER ****
 app.use(express.static(path.join(__dirname, "public")))
 
@@ -27,9 +19,17 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 // ****ROUTES****
-app.use(routes)
+app.use(routes);
+require("./controllers/restaurant-api.js")(app);
 
 // **** INDEX ROUTE ****
 app.get("/", function (req, res) {
     res.send("Invalid end point")
 }) 
+
+// **** DATABASE CONNECTION ****
+db.sequelize.sync({force: true}).then(function() {
+    app.listen(PORT, function() {
+        console.log("NOPE listening on PORT " + PORT)
+    });
+});
