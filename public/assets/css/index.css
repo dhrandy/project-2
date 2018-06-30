@@ -45,6 +45,10 @@ a:hover {
     width: 100%;
 }
 
+.main {
+    width: 100%;
+}
+
 .centered1 {
     position: absolute;
     top: 50%;
@@ -53,7 +57,7 @@ a:hover {
     color: white;
     font-size: 30px;
     font-weight: 800;
-    line-height: 15px;
+    line-height: 6vh;
 }
 
 .second-container {
@@ -61,9 +65,18 @@ a:hover {
     background-color: white;
 }
 
-.third-container {
-    height: 400px;
+/* .third-container {
     background-color:lightgray
+} */
+
+.description-container {
+    height: 150px;
+    
+}
+
+.p-description {
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .footer {
@@ -71,4 +84,13 @@ a:hover {
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+#dividerone{
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#description{
+    padding: 20px;
 }
