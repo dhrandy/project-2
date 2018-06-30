@@ -60,6 +60,20 @@ a:hover {
     line-height: 6vh;
 }
 
+.add {
+    position: absolute;
+    top: 82%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.find {
+    position: absolute;
+    top: 82%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
 .second-container {
     height: 400px;
     background-color: white;
@@ -101,7 +115,7 @@ div.row {
 
 .phone {
     padding: 20px;
-#example{
-    margin-left: 100px;
 
+#example {
+    margin-left: 100px;
 }
