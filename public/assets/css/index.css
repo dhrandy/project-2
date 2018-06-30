@@ -94,3 +94,11 @@ a:hover {
 #description{
     padding: 20px;
 }
+
+div.row {
+    padding: 0;
+}
+
+.phone {
+    padding: 20px;
+}
