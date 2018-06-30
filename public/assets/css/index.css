@@ -60,7 +60,7 @@ a:hover {
     line-height: 6vh;
 }
 
-.add {
+/* .add {
     position: absolute;
     top: 82%;
     left: 55%;
@@ -72,11 +72,18 @@ a:hover {
     top: 82%;
     left: 45%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .second-container {
     height: 400px;
     background-color: white;
+}
+
+.buttons {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* .third-container {
@@ -125,4 +132,8 @@ div.row {
 #bullet-list{
     margin-top: 40px;
     text-align: center
+}
+
+.form {
+    padding: 20px;
 }

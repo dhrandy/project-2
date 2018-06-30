@@ -7,10 +7,10 @@
     <title>NOPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="../semantic/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
-    <script type="text/javascript" src="../semantic/dist/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
 </head>
 
 <body>
@@ -32,11 +32,46 @@
         <img id="main" class="main" src="assets/imgs/mainImage.jpg">
         <div class="centered1">IS THIS RESTAURANT BUSY? FIND OUT WITH NOPE!</div>
         <div class = "buttons">
-        <span><button class="ui teal button add-find add">ADD A PLACE</button> <button class="ui blue button add-find find">FIND A PLACE</button></span>
+        <span><button class="ui teal button add-find add">ADD A PLACE</button> <button class="ui blue button add-find find" id="find">FIND A PLACE</button></span>
         </div>
     </div>
 
-    <div class="contianer" id="dividerone">
+    <div class="ui modal test">
+        <i class="close icon"></i>
+        <div class="header">
+          FIND A PLACE
+        </div>
+        <form class="ui form">
+            <div class="field">
+                    <label>Address</label>
+                    <div class="fields">
+                      <div class="eight wide field">
+                        <input type="text" name="street" placeholder="Street Address">
+                      </div>
+                    </div>
+                    
+                    <div class="three fields">
+                            
+                            <div class="four wide field">
+                                    <label>City</label>
+                              <input type="text" name="city" placeholder="City">
+                            </div>
+                            <div class="two wide field">
+                                    <label>State</label>
+                                    <input type="text" name="state" placeholder="State">
+                                  </div>
+                                  <div class="two wide field">
+                                        <label>Zip Code</label>
+                                        <input type="text" name="zip" placeholder="Zip-code">
+                                      </div>
+                          </div>
+                  </div>
+        <div class="actions">
+          <div class="ui button">Search</div>
+        </div>
+      </div>
+
+    <div class="container" id="dividerone">
         <h4 class="ui horizontal divider header">
             L E A R N &nbsp&nbsp A B O U T &nbsp&nbsp N O P E
     </div>
@@ -63,25 +98,24 @@
     <div class="container">
         <div class="ui two column grid" id="example">
             <div class="row">
-                <div class="column" id="bullet-list">
-
-                    <h2 class="ui header">BUSY OR NOT BUSY</h2>
+                <div class="column">
+                        <h2 class="ui header">BUSY OR NOT BUSY</h2>
                     <div class="ui bulleted list">
                         <div class="item">Check to see if a restaurant is busy</div>
-                        <div class="item">Update the status of the restaurant</div>
-                        <div class="item">See ratings for restaurants</div>
-                    </div>
+                        <div class="item">See restaurant ratings</div>
+                        <div class="item">asdf</div>
+                 
+                </div>
                 </div>
                 <div class="column">
-                    <a href="https://placeholder.com">
-                        <img src="assets/imgs/phone.jpg" class="phone">
-                    </a>
+                        <a href="https://placeholder.com">
+                            <img src="assets/imgs/phone.jpg" class = "phone">
+                        </a>
+                    </div>
                 </div>
+               
             </div>
-            </a>
         </div>
-    </div>
-    </div>
     </div>
 
     <div class="footer">
