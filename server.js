@@ -33,9 +33,3 @@ app.use(routes)
 app.get("/", function (req, res) {
     res.send("Invalid end point")
 }) 
-
-
-// **** START SERVER****
-app.listen(PORT, function() {
-    console.log("NOPE listening on PORT " + PORT)
-})
