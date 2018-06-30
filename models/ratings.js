@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-  var Rating = sequelize.define("rating", {
+  var Rating = sequelize.define("Rating", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -28,6 +28,14 @@ module.exports = function(sequelize, DataTypes) {
     }
     
     });
+
+  Rating.associate = function(models) {
+    Rating.belongsTo(models.Restaurant, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Rating;
   

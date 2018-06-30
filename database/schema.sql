@@ -2,23 +2,3 @@ DROP DATABASE IF EXISTS restaurantsDB;
 CREATE DATABASE restaurantsDB;
 
 USE restaurantsDB;
-
-CREATE TABLE restaurants (
-id INTEGER(12) AUTO_INCREMENT NOT NULL,
-name VARCHAR(100) NOT NULL,
-location VARCHAR(100) NOT NULL,
-status BOOLEAN,
-
-PRIMARY KEY(id)
-);
-
-CREATE TABLE ratings (
-id INTEGER(12) AUTO_INCREMENT NOT NULL,
-name VARCHAR(100) NOT NULL,
-food INTEGER(12),
-drinks INTEGER(12),
-atmosphere INTEGER(12),
-service  INTEGER(12),
-
-PRIMARY KEY(id)
-);
