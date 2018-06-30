@@ -34,11 +34,26 @@ a:hover {
     float: right;
 }
 
+.first-container {
+    position: relative;
+    text-align: center;
+    margin:0px;
+    padding: 0px;
+}
+
 #main{
     width: 100%;
-    position:relative;
-    top: 0px;
-    background-color: black;
+}
+
+.centered1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 15px;
 }
 
 .second-container {
