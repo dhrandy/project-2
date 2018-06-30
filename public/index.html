@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
     <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
     <script type="text/javascript" src="assets/js/index.js"></script>
+
 </head>
 
 <body>
@@ -43,33 +44,31 @@
         </div>
         <form class="ui form">
             <div class="field">
-                    <label>Address</label>
-                    <div class="fields">
-                      <div class="eight wide field">
-                        <input type="text" name="street" placeholder="Street Address">
-                      </div>
+                <label>Address</label>
+                <div class="fields">
+                    <div class="eight wide field">
+                    <input type="text" name="street" placeholder="Street Address" id="street">
                     </div>
-                    
-                    <div class="three fields">
-                            
-                            <div class="four wide field">
-                                    <label>City</label>
-                              <input type="text" name="city" placeholder="City">
-                            </div>
-                            <div class="two wide field">
-                                    <label>State</label>
-                                    <input type="text" name="state" placeholder="State">
-                                  </div>
-                                  <div class="two wide field">
-                                        <label>Zip Code</label>
-                                        <input type="text" name="zip" placeholder="Zip-code">
-                                      </div>
-                          </div>
-                  </div>
+                </div>
+                <div class="three fields">
+                    <div class="four wide field">
+                        <label>City</label>
+                        <input type="text" name="city" placeholder="City" id = "city">
+                    </div>
+                    <div class="two wide field">
+                        <label>State</label>
+                        <input type="text" name="state" placeholder="State" id="state">
+                    </div>
+                    <div class="two wide field">
+                        <label>Zip Code</label>
+                        <input type="text" name="zip" placeholder="Zip-code" id="zip">
+                    </div>
+                </div>
+            </div>
         <div class="actions">
-          <div class="ui button">Search</div>
+          <div class="ui button" id="sendAddress">Search</div>
         </div>
-      </div>
+    </div>
 
     <div class="container" id="dividerone">
         <h4 class="ui horizontal divider header">
@@ -122,5 +121,6 @@
         Copyright 2018
     </div>
 </body>
+<script type="text/javascript" src="assets/js/location.js"></script>
 
 </html>
