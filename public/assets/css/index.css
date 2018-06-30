@@ -51,9 +51,22 @@ a:hover {
     background-color:lightgray
 }
 
+.description-container {
+    height: 150px;
+}
+
 .footer {
     background-color: black;
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+#dividerone{
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#description{
+    padding: 20px;
 }
