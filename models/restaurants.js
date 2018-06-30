@@ -1,27 +1,32 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
 
-var Restaurant = sequelize.define("restaurant", {
-  name: { 
-    type: DataTypes.STRING,
-    allowNull: false,
-    primaryKey: true,
-  },
-  
-  location: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  
-  status: { 
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
+  var Restaurant = sequelize.define("Restaurant", {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-});
-return Restaurant;
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+
+  });
+
+  Restaurant.associate = function (models) {
+    Restaurant.hasMany(models.Rating, {
+      onDelete: "cascade",
+      //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
+      hooks: true
+    });
+  
+  }
+
+
+  return Restaurant;
 }
-
-
-
-// SORT BY COLUMN
-//https://dev.mysql.com/doc/refman/8.0/en/sorting-rows.html
