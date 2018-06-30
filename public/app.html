@@ -123,6 +123,51 @@
                     <button class="ui compact red button">BUSY</button>
                     <button class="ui compact green button">NOT BUSY</button>
                 </div>
+                <div class="ui container">
+                <div class="ui grid">
+                    <div class="ui row collapse">
+                        <div class="ui column">Food:</div>
+                        <div class="ui column">
+                            <span class="ui rating r-space" id="food" data-rating="5" data-max-rating="5"></span>
+                        </div>
+                    </div>
+
+                    <div class="ui row collapse">
+                        <div class="ui column">Drinks:</div>
+                        <div class="ui column">
+                            <span class="ui rating r-space" id="drinks" data-rating="5" data-max-rating="5"></span>
+                        </div>
+                    </div>
+
+                    <div class="ui row collapse">
+                        <div class="ui column">Atmosphere: </div>
+                        <div class="ui column">
+                            <span class="ui rating r-space" id="atmosphere" data-rating="4" data-max-rating="5"></span>
+                        </div>
+                    </div>
+
+                    <div class="ui row collapse">
+                        <div class="ui column">Staff:</div>
+                        <div class="ui column">
+                            <span class="ui rating r-space" id="staff" data-rating="5" data-max-rating="5"></span>
+                        </div>
+                    </div>
+
+                    <div class="ui row collapse">
+                        <div class="ui column">Cleanliness:</div>
+                        <div class="ui column">
+                            <span class="ui rating r-space" id="cleanliness" data-rating="4" data-max-rating="5"></span>
+                        </div>
+                    </div>
+                    <div class="ui row collapse">
+                        <div class="ui right column">Parking:</div>
+                        <div class="ui column">
+                            <span class="ui rating r-space" id="parking" data-rating="5" data-max-rating="5"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
                 `
             }
         ]
@@ -162,6 +207,9 @@
         }
 
         }//****end of map****
+
+        // **** Add clicks to the buttons ****
+        $("#")
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"async defer></script>
 </body>
