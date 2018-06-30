@@ -114,8 +114,13 @@ div.row {
 }
 
 .phone {
-    padding: 20px;
+    padding: 20px;}
 
-#example {
+#example{
     margin-left: 100px;
+
 }
+
+#bullet-list{
+    margin-top: 40px;
+    text-align: center
