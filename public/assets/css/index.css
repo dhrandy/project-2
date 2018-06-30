@@ -34,11 +34,30 @@ a:hover {
     float: right;
 }
 
+.first-container {
+    position: relative;
+    text-align: center;
+    margin:0px;
+    padding: 0px;
+}
+
 #main{
     width: 100%;
-    position:relative;
-    top: 0px;
-    background-color: black;
+}
+
+.main {
+    width: 100%;
+}
+
+.centered1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 6vh;
 }
 
 .second-container {
@@ -46,9 +65,18 @@ a:hover {
     background-color: white;
 }
 
-.third-container {
-    height: 400px;
+/* .third-container {
     background-color:lightgray
+} */
+
+.description-container {
+    height: 150px;
+    
+}
+
+.p-description {
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .footer {
@@ -56,4 +84,24 @@ a:hover {
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+#dividerone{
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#description{
+    padding: 20px;
+}
+
+div.row {
+    padding: 0;
+}
+
+.phone {
+    padding: 20px;
+#example{
+    margin-left: 100px;
+
 }
