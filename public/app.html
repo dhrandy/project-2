@@ -96,10 +96,19 @@
     </div> -->
 
     <script>
+
+        $.ajax({
+            url: "/user_coords",
+            method: "GET"
+        }).then(function(res) {
+            coords = res.body
+            console.log(coords)
+            initMap()
+        })
         var map
         function initMap() {
             //**** DEFAULT ZOOM FOR MAP****
-
+            
             var options = {
                 zoom: 8,
                 center: { lat: 35.2271, lng: -80.8431 }
@@ -209,7 +218,7 @@
         }//****end of map****
 
     </script>
-    <script type="text/javascript" src="assets/js/map.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/map.js"></script> -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"async defer></script>
 </body>
