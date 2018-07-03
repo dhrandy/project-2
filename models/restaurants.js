@@ -11,10 +11,10 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
 
-    status: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
+    // status: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    // },
 
   });
 

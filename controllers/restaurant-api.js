@@ -10,6 +10,29 @@ module.exports = function(app) {
       return res.json(dbRestaurant);
       
     });
+
+  app.get("/api/restaurants/:id", function(req, res) {
+    db.Author.findeOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Rating]
+    }).then(function(dbRestaurant) {
+      res.json(dbRestaurant);
+    });
+  });
+  
+  // Post route for saving a new restaurant
+  app.post("/api/restaurants", function(req, res) {
+    console.log(req.body);
+    db.Restaurant.create(
+      req.body
+    ).then(function(dbRestaurant){
+      res.json(dbRestaurant);
+    });
+  });
+
+  
   });
 
 

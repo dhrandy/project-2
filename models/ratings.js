@@ -6,26 +6,41 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       
     },
-    name: {type: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       between: [1,5]
         },
-    food: {type: DataTypes.INTEGER,
+    food: {
+      type: DataTypes.INTEGER,
       allowNull:false,
       between: [1,5]
     },
-    drinks: {type: DataTypes.INTEGER,
+    drinks: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       between: [1,5]
     },
-    atmosphere: {type: DataTypes.INTEGER,
+    atmosphere: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       between: [1,5]
     },
-    service: {type: DataTypes.INTEGER,
+    service: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       between: [1,5]
-    }
+    },
+    parking: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      between: [1,5]
+    },
+    cleanliness: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      between: [1,5]
+    },
     
     });
 

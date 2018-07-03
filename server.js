@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // ****ROUTES****
 app.use(routes);
 require("./controllers/restaurant-api.js")(app);
+require("./controllers/rating-api.js")(app);
 
 // **** INDEX ROUTE ****
 app.get("/", function (req, res) {
