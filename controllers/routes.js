@@ -1,6 +1,7 @@
 var express = require("express")
 var path = require("path")
 var router = express.Router()
+var orm = require("../config/orm.js")
 
 
 // **** AUTHENTICATE USER****
@@ -21,22 +22,16 @@ router.get("/review", function(req, res) {
 
 // **** LISTEN FOR POST USER DATA PAGE *****
 router.post("/user_coords", function(req, res) {
-    user_coords = req.body.coords
-    console.log(user_coords)
-    if(user_coords != null) {
-        coords = user_coords
-    }
-    else {
-        return res.json({sucess: false, msg: "PLEASE ENTER A VALID ADDRESS"})
-    }
-    console.log( "This is returned  " + res.coords)
+    // console.log(req.body)
+    coords = req.body.coords
+    console.log(coords)
+    res.redirect(path.join(__dirname, "../public/app/" + coords.lat + "/" + coords.lng))
 });
 
 
 // // **** GET USER DATA PAGE *****
-router.get("/user_coords", function(req, res) {
-    user_coords = res.body.user_coords
-    console.log(user_coords)
+router.get("../public/app/lat:/lng:", function(req, res) {
+    res.redirect("../public/app/lat:/lng:")
 });
 
 // **** DEFAULT ROUTE ****

@@ -1,14 +1,6 @@
-// **** API CALL TO GET LOCATION FROM THE FORM ****
-function sendLocation() {
-    $("#sendAddress").on("click", function() {
-        event.preventDefault()
-        var locationData = {
-            street: $("#street").val(),
-            city: $("#city").val(),
-            state: $("#state").val(),
-            zip: $("#zip").val()
-        }
-        
+var orm = {
+    getLocation: function (locationData) {
+    
         var streetArray = []
         streetArray = locationData.street.split(" ").join("+")
         
@@ -30,8 +22,7 @@ function sendLocation() {
                 method: "POST",
                 data: {coords}
             })
+            console.log("DATA SENT")
         })
-    })
+    }//End get Lo
 }
-
-sendLocation()

@@ -3,10 +3,13 @@ var coords
 var markers = []
 
 $.ajax({
-    url: "/user_coords",
+    url: "/app/lat:/lng:",
     method: "GET"
-}).then(function(data) {
-    coords = req.body
+}).then(function(req, res) {
+    coords = {
+        lat: req.params.lat,
+        lng: req.parms.lng
+    }
     console.log(coords)
     initMap()
 })
