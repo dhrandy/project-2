@@ -1,9 +1,17 @@
-$(function(){
-	$("#find").click(function(){
-		$(".test").modal('show');
-	});
-	$(".test").modal({
+$(document).ready(function () {
+    $("#find").click(function () {
+        $(".address-form").modal('show');
+    });
+    $(".address-form").modal({
         closable: true,
-        width: 600
-	});
+    });
 });
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}

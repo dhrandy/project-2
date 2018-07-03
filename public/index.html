@@ -2,125 +2,135 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NOPE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
-    <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/js/index.js"></script>
-
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<title>NOPE</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript">
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="assets/semantic/dist/semantic.min.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="assets/css/index.css" media="screen" rel="stylesheet" type="text/css">
+	<script src="assets/semantic/dist/semantic.min.js" type="text/javascript">
+	</script>
+	<script src="assets/js/index.js" type="text/javascript">
+	</script>
 </head>
 
 <body>
-    <ul>
-        <li>
-            <a class="active" href="index.html">N &nbsp O &nbsp P &nbspE </a>
-        </li>
-        <li>
-            <a class="right" href="/app">APP</a>
-        </li>
-        <li>
-            <a class="right" href="/review">MAP</a>
-        </li>
-        <li>
-            <a class="right" href="#about">ABOUT</a>
-        </li>
-    </ul>
-    <div class="container first-container">
-        <img id="main" class="main" src="assets/imgs/mainImage.jpg">
-        <div class="centered1">IS THIS RESTAURANT BUSY? <br>FIND OUT WITH NOPE!</div>
-        <div class = "buttons">
-        <span><button class="ui teal button add-find add">ADD A PLACE</button> <button class="ui blue button add-find find" id="find">FIND A PLACE</button></span>
-        </div>
-    </div>
-
-    <div class="ui modal test">
-        <i class="close icon"></i>
-        <div class="header">
-          FIND A PLACE
-        </div>
-        <form class="ui form">
-            <div class="field">
-                <label>Address</label>
-                <div class="fields">
-                    <div class="eight wide field">
-                    <input type="text" name="street" placeholder="Street Address" id="street">
-                    </div>
+	<ul>
+		<li>
+			<a class="active show-desktop" href="index.html">N &nbsp; O &nbsp; P &nbspE</a>
+			<a class="active show-mobile" href="index.html">NOPE</a>
+		</li>
+		<li>
+			<a class="right" href="/app">APP</a>
+		</li>
+		<li>
+			<a class="right" href="/review">MAP</a>
+		</li>
+		<li>
+			<a class="right" href="#about">ABOUT</a>
+		</li>
+	</ul>
+	<div class="ui fluid container first-container">
+		<div id="main">
+			<div class="centered1">
+				IS THIS RESTAURANT BUSY?
+				<br> FIND OUT WITH NOPE!
+			</div>
+			<div class="buttons">
+				<span>
+					<button class="ui teal button add-find add" onclick="location.href='/mobile-test/add-a-place.html'"">
+						<span>ADD A PLACE</span>
+						<button class="ui blue button add-find find" onclick="location.href='/mobile-test/find-a-place.html'" id="find">FIND A PLACE</button>
+					</button>
+				</span>
+				<!-- <div class="show-mobile">
+					<button class="ui teal button add-find add">ADD A PLACE</button>
+					<button class="ui blue button add-find find" onclick="location.href='/mobile-test/mobile-form.html'" id="find-mobile">FIND A PLACE</button>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- <div class="ui mini modal address-form">
+            <i class="close icon"></i>
+            <div class="header">
+                FIND A PLACE
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <label>Street</label> <input id="street" name="street" placeholder="Street Address" type="text">
                 </div>
-                <div class="three fields">
-                    <div class="four wide field">
-                        <label>City</label>
-                        <input type="text" name="city" placeholder="City" id = "city">
-                    </div>
-                    <div class="two wide field">
-                        <label>State</label>
-                        <input type="text" name="state" placeholder="State" id="state">
-                    </div>
-                    <div class="two wide field">
-                        <label>Zip Code</label>
-                        <input type="text" name="zip" placeholder="Zip-code" id="zip">
+                <div class="field">
+                    <label>City</label> <input id="city" name="city" placeholder="City" type="text">
+                </div>
+                <div class="field">
+                    <label>State</label> <input id="state" name="state" placeholder="State" type="text">
+                </div>
+                <div class="field">
+                    <label>Zip Code</label> <input id="zip" name="zip" placeholder="Zip Code" type="text">
+                </div>
+                <div class="actions">
+                    <div class="ui button" id="sendAddress">
+                        Search
                     </div>
                 </div>
             </div>
-        <div class="actions">
-          <div class="ui button" id="sendAddress">Search</div>
-        </div>
-    </div>
-
-    <div class="container" id="dividerone">
-        <h4 class="ui horizontal divider header">
-            L E A R N &nbsp&nbsp A B O U T &nbsp&nbsp N O P E
-    </div>
-
-    <div class="container description-container" id="description">
-        <p class="p-description">Nope is a creative application that saves the most valuable of resources... Time. Nope was created to save you time
-            in lines by displaying the wait time for the restaurant of your choosing around you.
-        </p>
-        <p class="p-description">
-            Along with wait times, we conveniently added a minimalistic, yet helpful rating system for: Food, Drinks, Atmosphere, Staff,
-            Cleanliness, and Parking. The system makes it easy to find the highest ratings in the categories you find most
-            important.
-        </p>
-    </div>
-    <div class="container third-container">
-        <img class="main" src="assets/imgs/people-eating.jpg">
-    </div>
-
-    <div class="container" id="dividerone">
-        <h4 class="ui horizontal divider header">
-            C H E C K &nbsp&nbsp O U T &nbsp&nbsp O U R &nbsp&nbsp M O B I L E &nbsp&nbsp A P P L I C A T I O N
-    </div>
-
-    <div class="container">
-        <div class="ui two column grid" id="example">
-            <div class="row">
-                <div class="column">
-                        <h2 class="ui header">BUSY OR NOT BUSY</h2>
-                    <div class="ui bulleted list">
-                        <div class="item">Check to see if a restaurant is busy</div>
-                        <div class="item">See restaurant ratings</div>
-                        <div class="item">asdf</div>
-                 
-                </div>
-                </div>
-                <div class="column">
-                        <a href="https://placeholder.com">
-                            <img src="assets/imgs/phone.jpg" class = "phone">
-                        </a>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        Copyright 2018
-    </div>
+        </div> -->
+	<div class="ui container" id="dividerone">
+		<h2 class="ui horizontal divider header show-desktop">L E A R N &nbsp;&nbsp; A B O U T &nbsp;&nbsp; N O P E</h2>
+		<h4 class="ui horizontal divider header show-mobile">LEARN ABOUT NOPE</h4>
+	</div>
+	<div class="ui container description-container" id="description">
+		<p class="p-description">Nope is a creative application that saves the most valuable of resources... Time. Nope was created to save you time in
+			lines by displaying the wait time for the restaurant of your choosing around you.</p>
+		<p class="p-description">Along with wait times, we conveniently added a minimalistic, yet helpful rating system for: Food, Drinks, Atmosphere, Staff,
+			Cleanliness, and Parking. The system makes it easy to find the highest ratings in the categories you find most important.</p>
+	</div>
+	<div class="container third-container">
+		<img id="second-img" src="assets/imgs/people-eating.jpg">
+	</div>
+	<div class="ui container" id="dividerone">
+		<h2 class="ui horizontal divider header show-desktop">C H E C K &nbsp;&nbsp; O U T &nbsp;&nbsp; O U R &nbsp;&nbsp; M O B I L E &nbsp;&nbsp; A P P</h2>
+		<h4 class="ui horizontal divider header show-mobile">CHECK OUT OUR MOBILE APP</h4>
+	</div>
+	<div class="ui container center">
+		<div class="ui two column grid stackable" id="example">
+			<div class="row">
+				<div class="column centered-list">
+					<h2 class="ui header phone-mobile centered-list">BUSY OR NOT BUSY</h2>
+					<div class="ui bulleted list phone-left desktop-centered">
+						<div class="item">
+							Check to see if a restaurant is busy
+						</div>
+						<div class="item">
+							See restaurant ratings
+						</div>
+						<div class="item">
+							Give your own ratings
+						</div>
+						<div class="item">
+							Save your favorite ratings
+						</div>
+						<div class="item">
+							Mobile friendly
+						</div>
+					</div>
+				</div>
+				<div class="column phone-mobile">
+					<a href="https://placeholder.com">
+						<img class="phone" src="assets/imgs/phone.jpg">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		© 2018 | All Rights Reserved
+	</div>
+	<script src="assets/js/location.js" type="text/javascript">
+	</script>
 </body>
-<script type="text/javascript" src="assets/js/location.js"></script>
 
 </html>
