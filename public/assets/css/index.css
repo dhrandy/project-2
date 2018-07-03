@@ -5,10 +5,9 @@ ul {
     overflow: hidden;
     background-color: transparent;
     position: absolute;
-    width: 98%; 
+    width: 98%;
     z-index: 1;
 }
-
 
 li a {
     display: block;
@@ -19,7 +18,7 @@ li a {
     font-size: 16px;
 }
 
-a:hover { 
+a:hover {
     color: grey;
 }
 
@@ -30,23 +29,50 @@ a:hover {
     font-weight: bold;
 }
 
-.right{
+.right {
     float: right;
 }
 
 .first-container {
     position: relative;
     text-align: center;
-    margin:0px;
+    margin: 0px;
     padding: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
-#main{
-    width: 100%;
+/* Top Image */
+
+#main {
+    background: url('../imgs/mainImage.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    /* width: 100%; */
 }
 
-.main {
-    width: 100%;
+#main-desktop-form {
+    background: url('../imgs/main-desktop-form.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+#main-desktop-form2 {
+    background: url('../imgs/main-desktop-form2.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+/* Bottom Image */
+
+#second-img {
+    width: 100%
 }
 
 .centered1 {
@@ -55,28 +81,21 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 800;
     line-height: 6vh;
-}
-
-.add {
-    position: absolute;
-    top: 82%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-}
-
-.find {
-    position: absolute;
-    top: 82%;
-    left: 45%;
-    transform: translate(-50%, -50%);
 }
 
 .second-container {
     height: 400px;
     background-color: white;
+}
+
+.buttons {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* .third-container {
@@ -85,12 +104,12 @@ a:hover {
 
 .description-container {
     height: 150px;
-    
 }
 
 .p-description {
     margin-left: 100px;
     margin-right: 100px;
+    font-size: 1.3rem;
 }
 
 .footer {
@@ -100,13 +119,15 @@ a:hover {
     text-align: center;
 }
 
-#dividerone{
+#dividerone {
     margin-top: 30px;
     padding: 20px;
 }
 
-#description{
+#description {
     padding: 20px;
+    margin-bottom: 30px;;
+    height: auto;
 }
 
 div.row {
@@ -117,12 +138,168 @@ div.row {
     padding: 20px;
 }
 
-#example{
+#example {
     margin-left: 100px;
-
 }
 
-#bullet-list{
+#bullet-list {
     margin-top: 40px;
     text-align: center
+}
+
+.ui.header:first-child {
+    margin-top: 10px;
+}
+
+.desktop-form-container {
+    text-align: center;
+}
+
+.desktop-form {
+    display: inline-block;
+    text-align: left;
+    width: 300px;
+    margin-bottom:30px;
+}
+
+.desktop-form2 {
+    display: inline-block;
+    text-align: left;
+    width: 400px;
+}
+
+.centered-list {
+    text-align: center;
+    padding: 20px;
+}
+
+.desktop-centered {
+    display: inline-block;
+    text-align: left;
+}
+
+.item {
+    font-size: 1.3rem;
+}
+
+.add-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.ui.button {
+    margin-bottom: 20px;
+}
+
+
+/* Mobile */
+
+@media only screen and (max-width: 767px) {
+    .show-desktop {
+        display: none !important;
+    }
+
+    .p-description {
+        margin: 1rem;
+        font-size: 14px;
+    }
+
+    #divider1 {
+        /* margin: 0; */
+        padding: 0px;
+    }
+
+    #dividerone {
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+
+    #description {
+        margin-bottom: 20px;
+    }
+    .ui.container {
+        margin-left: 0em !important;
+        margin-right: 0em !important;
+    }
+
+    .ui.header:first-child {
+        margin-top: 10px;
+    }
+
+    .phone-mobile {
+        text-align: center;
+    }
+
+    .item {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .ui.blue.button {
+        margin-top: 3px;
+    }
+
+    .model {
+        margin: 10px;
+    }
+
+    .form {
+        padding: 10px;
+    }
+
+    .centered1 {
+        font-size: 28px;
+    }
+
+    .item {
+        font-size: 14px;
+    }
+
+    #main-desktop-form {
+        height: 200px;
+    }
+
+    #main-desktop-form2 {
+        height: 200px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 2000000px) {
+    .show-mobile {
+        display: none !important;
+    }
+}
+
+
+
+/* Add a place page */
+
+#food {
+    margin-right: 59px;
+}
+
+#drinks {
+    margin-right: 50px;
+}
+
+#atmosphere {
+    margin-right: 17px;
+}
+
+#staff {
+    margin-right: 62px;
+}
+
+#cleanliness {
+    margin-right: 24px;
+}
+
+#parking {
+    margin-right: 45px;
+}
+
+.ui.horizontal.divider {
+    margin-bottom: 30px;
 }
