@@ -3,7 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/restaurants", function(req, res) {
     db.Restaurant.findAll({
-      include: [db.Rating]
+      include: [db.Rating],
+      include: [db.Statuses]
     })
     .then(function(dbRestaurant) {
       console.log(dbRestaurant);
@@ -16,12 +17,13 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Rating]
+      include: [db.Rating],
+      include: [db.Statuses]
     }).then(function(dbRestaurant) {
       res.json(dbRestaurant);
     });
   });
-  
+
   // Post route for saving a new restaurant
   app.post("/api/restaurants", function(req, res) {
     console.log(req.body);

@@ -16,17 +16,6 @@ module.exports = function(app) {
     });
   });
 
-  //Get route for retrieing a single rating
-  app.get("api/ratings/:id", function(req,res) {
-    db.Rating.findOne({
-      where:{
-        id: req.params.id
-      }, 
-      include: [db.Restaurant]
-    }).then(function(dbRating) {
-      res.json(dbPost);
-    });
-  });
 
   //Post route for saving a new rating
   app.post("/api/ratings", function(req, res){

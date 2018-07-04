@@ -31,11 +31,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       between: [1,5]
     },
-    parking: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      between: [1,5]
-    },
     cleanliness: {
       type: DataTypes.INTEGER,
       allowNull: false,

@@ -1,30 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Test page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-
-<form id="test">
-  <b>Add a Restaurant:</b> <br>
-  Name: <br>
-  <input type="text" placeholder="Restaurant Name" id="name"><br>
-  Location: <br>
-  <input type="text" placeholder="Restaurant Location" id="location"><br>
-  Status: <br>
-  <button id="busy-button">Busy</button> <button id="notbusy-button">Not busy</button>
-  <br>
-  <br>
-  <button type="submit">SUBMIT</button>
-
-</form>  
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-
 $(document).ready(function() {
   var nameInput = $("#name");
   var locationInput = $("#location");
@@ -55,11 +28,3 @@ $(document).ready(function() {
       })
     };
 });
-
-</script>
-
-
-</body>
-</html>
-
-
