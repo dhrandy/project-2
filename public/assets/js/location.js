@@ -15,8 +15,6 @@ function sendLocation() {
 
         locationData.street = streetArray
 
-        // console.log(locationData)
-
         $.ajax({
             url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + locationData.street + "," + locationData.city + "," + locationData.state + "&key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg",
             method: "GET"
@@ -28,12 +26,6 @@ function sendLocation() {
             console.log(coords)
 
             window.location.assign("/app/" + coords.lat + "/" + coords.lng )
-            
-            // $.ajax({
-            //     url: "/user_coords",
-            //     method: "POST",
-            //     data: {coords}
-            // })
         })
     })
 }

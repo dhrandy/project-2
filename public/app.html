@@ -5,12 +5,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NOPE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" /> -->
+
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" /> -->
     <!-- <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script> -->
     <!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
+
 
 </head>
 
@@ -40,7 +43,7 @@
     </div>
 
     <div class="ui container container-margin">
-        <div id="map"></div>
+        <div id="map" style="height:600px"></div>
 
         <!-- <div class = "map">
             <img src = "assets/imgs/maps.jpg" class = "mapimg">
@@ -95,17 +98,14 @@
 
         </div>
     </div> -->
-
+</body>
 <script>
     var markers = []
 
     var pathArray = window.location.pathname.split( '/' )
 
-    console.log(pathArray)
     LAT = Number(pathArray[2])
-    console.log("This is LAT  "  + LAT)
     LNG = Number(pathArray[3])
-    console.log("This is LNG  " + LNG)
     
     coords = {
         lat: LAT,
@@ -115,23 +115,33 @@
     console.log(coords)
 
     var map
-    function initMap(coords) {
+
+    function initMap() {
         //**** DEFAULT ZOOM FOR MAP****
         
         var options = {
             zoom: 8,
             center: coords
         }
+    console.log("work1")
 
         map = new google.maps.Map(document.getElementById('map'), options)
 
+
+
+        console.log(options)
+        console.log(map)
+
+
+        console.log("work2")
+
         //****LISTEN FOR MAP CLICK TO ADD MARKER****
 
-    // google.maps.event.addListener(map, "click", function(event) {
-    //     addMarker({coords:event.latLng})
-    // })
+        // google.maps.event.addListener(map, "click", function(event) {
+        //     addMarker({coords:event.latLng})
+        // })
     
-    var markers = [
+        var markers = [
         {
             coords:{lat: 35.2271, lng: -80.8431},
             image: "",
@@ -187,8 +197,7 @@
             </div>
         </div>
             `
-        }
-    ]
+        }]
 
         for (var i = 0; i < markers.length; i++) {
             addMarker(markers[i])
@@ -219,16 +228,13 @@
 
             //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
 
-        marker.addListener("click", function() {
-            infoWindow.open(map, marker)
-        })
-    }
+            marker.addListener("click", function() {
+                infoWindow.open(map, marker)
+            })
+        }
 
     }//****end of map****
-initMap(coords)
 </script>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"></script>
-</body>
 
 </html>
