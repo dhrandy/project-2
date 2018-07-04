@@ -7,10 +7,11 @@
     <title>NOPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" />
-    <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" /> -->
+    <!-- <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script> -->
+    <!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
+
 </head>
 
 <body>
@@ -95,123 +96,139 @@
         </div>
     </div> -->
 
-    <script>
-        var map
-        function initMap() {
-            //**** DEFAULT ZOOM FOR MAP****
+<script>
+    var markers = []
 
-            var options = {
-                zoom: 8,
-                center: { lat: 35.2271, lng: -80.8431 }
-            }
+    var pathArray = window.location.pathname.split( '/' )
 
-            map = new google.maps.Map(document.getElementById('map'), options)
+    console.log(pathArray)
+    LAT = Number(pathArray[2])
+    console.log("This is LAT  "  + LAT)
+    LNG = Number(pathArray[3])
+    console.log("This is LNG  " + LNG)
+    
+    coords = {
+        lat: LAT,
+        lng: LNG
+    }
 
-            //****LISTEN FOR MAP CLICK TO ADD MARKER****
+    console.log(coords)
 
-        // google.maps.event.addListener(map, "click", function(event) {
-        //     addMarker({coords:event.latLng})
-        // })
+    var map
+    function initMap(coords) {
+        //**** DEFAULT ZOOM FOR MAP****
         
-        var markers = [
-            {
-                coords:{lat: 35.2271, lng: -80.8431},
-                image: "",
-                content:`
-                <div>
-                    <h1>SOME PLACE</h1>
-                    <button class="ui compact red button">BUSY</button>
-                    <button class="ui compact green button">NOT BUSY</button>
-                </div>
-                <div class="ui container">
-                <div class="ui grid">
-                    <div class="ui row collapse">
-                        <div class="ui column">Food:</div>
-                        <div class="ui column">
-                            <span class="ui rating r-space" id="food" data-rating="5" data-max-rating="5"></span>
-                        </div>
-                    </div>
-
-                    <div class="ui row collapse">
-                        <div class="ui column">Drinks:</div>
-                        <div class="ui column">
-                            <span class="ui rating r-space" id="drinks" data-rating="5" data-max-rating="5"></span>
-                        </div>
-                    </div>
-
-                    <div class="ui row collapse">
-                        <div class="ui column">Atmosphere: </div>
-                        <div class="ui column">
-                            <span class="ui rating r-space" id="atmosphere" data-rating="4" data-max-rating="5"></span>
-                        </div>
-                    </div>
-
-                    <div class="ui row collapse">
-                        <div class="ui column">Staff:</div>
-                        <div class="ui column">
-                            <span class="ui rating r-space" id="staff" data-rating="5" data-max-rating="5"></span>
-                        </div>
-                    </div>
-
-                    <div class="ui row collapse">
-                        <div class="ui column">Cleanliness:</div>
-                        <div class="ui column">
-                            <span class="ui rating r-space" id="cleanliness" data-rating="4" data-max-rating="5"></span>
-                        </div>
-                    </div>
-                    <div class="ui row collapse">
-                        <div class="ui right column">Parking:</div>
-                        <div class="ui column">
-                            <span class="ui rating r-space" id="parking" data-rating="5" data-max-rating="5"></span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-                `
-            }
-        ]
-
-            for (var i = 0; i < markers.length; i++) {
-                addMarker(markers[i])
-            }
-
-            function addMarker(props) {
-
-                // ****CHECK FOR ICON****
-
-                if (props.icon) {
-                    marker.setIcon(props.icon)
-                }
-
-                // ****VALIDATE CONTENT****
-
-                if (props.content) {
-                    var infoWindow = new google.maps.InfoWindow({
-                        content: props.content
-                    })
-                }
-
-                var marker = new google.maps.Marker({
-                    position: props.coords,
-                    map: map,
-                    icon: props.image,
-                    content: props.content
-                })
-
-                //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
-
-            marker.addListener("click", function() {
-                infoWindow.open(map, marker)
-            })
+        var options = {
+            zoom: 8,
+            center: coords
         }
 
-        }//****end of map****
+        map = new google.maps.Map(document.getElementById('map'), options)
 
-    </script>
-    <script type="text/javascript" src="assets/js/map.js"></script>
+        //****LISTEN FOR MAP CLICK TO ADD MARKER****
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"async defer></script>
+    // google.maps.event.addListener(map, "click", function(event) {
+    //     addMarker({coords:event.latLng})
+    // })
+    
+    var markers = [
+        {
+            coords:{lat: 35.2271, lng: -80.8431},
+            image: "",
+            content:`
+            <div>
+                <h1>SOME PLACE</h1>
+                <button class="ui compact red button">BUSY</button>
+                <button class="ui compact green button">NOT BUSY</button>
+            </div>
+            <div class="ui container">
+            <div class="ui grid">
+                <div class="ui row collapse">
+                    <div class="ui column">Food:</div>
+                    <div class="ui column">
+                        <span class="ui rating r-space" id="food" data-rating="5" data-max-rating="5"></span>
+                    </div>
+                </div>
+
+                <div class="ui row collapse">
+                    <div class="ui column">Drinks:</div>
+                    <div class="ui column">
+                        <span class="ui rating r-space" id="drinks" data-rating="5" data-max-rating="5"></span>
+                    </div>
+                </div>
+
+                <div class="ui row collapse">
+                    <div class="ui column">Atmosphere: </div>
+                    <div class="ui column">
+                        <span class="ui rating r-space" id="atmosphere" data-rating="4" data-max-rating="5"></span>
+                    </div>
+                </div>
+
+                <div class="ui row collapse">
+                    <div class="ui column">Staff:</div>
+                    <div class="ui column">
+                        <span class="ui rating r-space" id="staff" data-rating="5" data-max-rating="5"></span>
+                    </div>
+                </div>
+
+                <div class="ui row collapse">
+                    <div class="ui column">Cleanliness:</div>
+                    <div class="ui column">
+                        <span class="ui rating r-space" id="cleanliness" data-rating="4" data-max-rating="5"></span>
+                    </div>
+                </div>
+                <div class="ui row collapse">
+                    <div class="ui right column">Parking:</div>
+                    <div class="ui column">
+                        <span class="ui rating r-space" id="parking" data-rating="5" data-max-rating="5"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+            `
+        }
+    ]
+
+        for (var i = 0; i < markers.length; i++) {
+            addMarker(markers[i])
+        }
+
+        function addMarker(props) {
+
+            // ****CHECK FOR ICON****
+
+            if (props.icon) {
+                marker.setIcon(props.icon)
+            }
+
+            // ****VALIDATE CONTENT****
+
+            if (props.content) {
+                var infoWindow = new google.maps.InfoWindow({
+                    content: props.content
+                })
+            }
+
+            var marker = new google.maps.Marker({
+                position: props.coords,
+                map: map,
+                icon: props.image,
+                content: props.content
+            })
+
+            //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
+
+        marker.addListener("click", function() {
+            infoWindow.open(map, marker)
+        })
+    }
+
+    }//****end of map****
+initMap(coords)
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"></script>
 </body>
 
 </html>
