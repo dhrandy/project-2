@@ -7,10 +7,11 @@
     <title>NOPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" />
-    <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" /> -->
+    <!-- <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script> -->
+    <!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
+
 </head>
 
 <body>
@@ -96,26 +97,30 @@
     </div> -->
 
 <script>
-    var coords
     var markers = []
 
-    $.ajax({
-        url: "/app/lat:/lng:",
-        method: "GET",
-        data: {coords}
-    }).then(function(req, res) {
-        coords
-        
-        console.log(coords)
-        initMap()
-    })
+    var pathArray = window.location.pathname.split( '/' )
+
+    console.log(pathArray)
+    LAT = Number(pathArray[2])
+    console.log("This is LAT  "  + LAT)
+    LNG = Number(pathArray[3])
+    console.log("This is LNG  " + LNG)
+    
+    coords = {
+        lat: LAT,
+        lng: LNG
+    }
+
+    console.log(coords)
+
     var map
-    function initMap() {
+    function initMap(coords) {
         //**** DEFAULT ZOOM FOR MAP****
         
         var options = {
             zoom: 8,
-            center: { lat: 35.2271, lng: -80.8431 }
+            center: coords
         }
 
         map = new google.maps.Map(document.getElementById('map'), options)
@@ -220,11 +225,10 @@
     }
 
     }//****end of map****
-
+initMap(coords)
 </script>
-<!-- <script type="text/javascript" src="assets/js/map.js"></script> -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"></script>
 </body>
 
 </html>

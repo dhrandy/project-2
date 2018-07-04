@@ -25,18 +25,18 @@ router.post("/user_coords", function(req, res) {
     // console.log(req.body)
     coords = req.body.coords
     console.log(coords)
-    res.redirect(path.join(__dirname, "../public/app/" + coords.lat + "/" + coords.lng))
+    res.redirect("/app/" + coords.lat + "/" + coords.lng)
 });
 
 
 // // **** GET USER DATA PAGE *****
-router.get("../public/app/lat:/lng:", function(req, res) {
-    res.redirect("../public/app/lat:/lng:")
+router.get("/app/:lat/:lng", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/app.html"))
 });
 
 // **** DEFAULT ROUTE ****
-router.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
-}) 
+// router.get("*", function (req, res) {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+// }) 
 
 module.exports = router

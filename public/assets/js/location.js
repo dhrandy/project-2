@@ -24,12 +24,15 @@ function sendLocation() {
             for (i = 0; i < result.results.length; i++) {
                 coords = result.results[i].geometry.location
             }
-            // console.log(coords)
-            $.ajax({
-                url: "/user_coords",
-                method: "POST",
-                data: {coords}
-            })
+            console.log(coords)
+
+            window.location.assign("/app/" + coords.lat + "/" + coords.lng )
+            
+            // $.ajax({
+            //     url: "/user_coords",
+            //     method: "POST",
+            //     data: {coords}
+            // })
         })
     })
 }
