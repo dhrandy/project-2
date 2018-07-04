@@ -1,7 +1,8 @@
 // **** API CALL TO GET LOCATION FROM THE FORM ****
 function sendLocation() {
-    $("#sendAddress").on("click", function() {
+    $("#sendAddress").on("click", function () {
         event.preventDefault()
+        console.log("search button clicked")
         var locationData = {
             street: $("#street").val(),
             city: $("#city").val(),
@@ -11,7 +12,7 @@ function sendLocation() {
         
         var streetArray = []
         streetArray = locationData.street.split(" ").join("+")
-        
+
         locationData.street = streetArray
 
         // console.log(locationData)
