@@ -20,7 +20,7 @@ router.post("/authenticate", function (req, res) {
 }) 
 
 // **** USER PROFILE ****
-router.get("/app", function (req, res) {
+router.get("/map", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/app.html"))
     
 }) 
@@ -35,16 +35,16 @@ router.post("/user_coords", function(req, res) {
     // console.log(req.body)
     coords = req.body.coords
     console.log(coords)
-    res.redirect("/app/" + coords.lat + "/" + coords.lng)
+    res.redirect("/map/" + coords.lat + "/" + coords.lng)
 });
 
 
 // // **** GET USER DATA PAGE *****
-router.get("/app/:lat/:lng", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/app.html"))
+router.get("/map/:lat/:lng", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/map.html"))
 });
 
-// **** DEFAULT ROUTE ****
+// **** DEFAULT ROUTE **** (Goes in server file)
 // router.get("*", function (req, res) {
 //     res.sendFile(path.join(__dirname, "../public/index.html"))
 // }) 
