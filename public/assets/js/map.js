@@ -22,8 +22,9 @@ $(document).ready(function () {
 
         var options = {
             zoom: 14,
-            center: coords
-            // {lat: 35.2271, lng: -80.8431} center of Charlotte
+            center: 
+             {lat: 35.2271, lng: -80.8431} 
+            //  center of Charlotte
         }
         console.log("work1")
 

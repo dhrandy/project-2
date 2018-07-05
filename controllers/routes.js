@@ -30,6 +30,16 @@ router.get("/review", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/review.html"));
 });
 
+// **** ADD A PLACE PAGE ****
+router.post("/add", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/add-a-place.html"))
+}) 
+
+// **** FIND A PLACE PAGE ****
+router.post("/find", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/find-a-place.html"))
+}) 
+
 // **** LISTEN FOR POST USER DATA PAGE *****
 router.post("/user_coords", function(req, res) {
     // console.log(req.body)

@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(routes);
 require("./controllers/restaurant-api.js")(app);
 require("./controllers/rating-api.js")(app);
-// require("./controllers/status.js")(app);
+require("./controllers/status.js")(app);
 router = require("./controllers/routes.js")
 
 
