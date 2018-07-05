@@ -5,8 +5,7 @@ module.exports = function(app) {
   // GET route for getting all restaurants
   app.get("/api/restaurants", function(req, res) {
     db.Restaurant.findAll({
-       include: [db.Rating],
-       include: [db.Statuses]
+       include: [db.Rating, db.Statuses]
     })
     .then(function(dbRestaurant) {
        console.log(dbRestaurant);
@@ -19,8 +18,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Rating],
-      include: [db.Statuses]
+      include: [db.Rating, db.Statuses]
     }).then(function(dbRestaurant) {
       res.json(dbRestaurant);
     });
@@ -46,3 +44,6 @@ module.exports = function(app) {
   });  
 
 };
+
+
+

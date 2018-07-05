@@ -1,49 +1,18 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 
 <head>
 	<meta charset="utf-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<title>NOPE</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript">
-	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="assets/semantic/dist/semantic.min.css" media="screen" rel="stylesheet" type="text/css">
-	<link href="assets/css/index.css" media="screen" rel="stylesheet" type="text/css">
-	<script src="assets/semantic/dist/semantic.min.js" type="text/javascript">
-	</script>
-	<!-- <script src="assets/js/restaurant.js" type="text/javascript">
-	</script> -->
+	<link href="assets/css/style.css" media="screen" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
 </head>
 
-<body>
-	<ul>
-		<li>
-			<a class="active show-desktop" href="index.html">N &nbsp; O &nbsp; P &nbspE</a>
-			<a class="active show-mobile" href="index.html">NOPE</a>
-		</li>
-		<li>
-			<a class="right" href="/app">APP</a>
-		</li>
-		<li>
-			<a class="right" href="/review">MAP</a>
-		</li>
-		<li>
-			<a class="right" href="#about">ABOUT</a>
-		</li>
-	</ul>
-
-=======
-	<head>
-		<meta charset="utf-8">
-		<meta content="IE=edge" http-equiv="X-UA-Compatible">
-		<title>NOPE</title>
-		<meta content="width=device-width, initial-scale=1" name="viewport">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="assets/semantic/dist/semantic.min.css" media="screen" rel="stylesheet" type="text/css">
-		<link href="assets/css/style.css" media="screen" rel="stylesheet" type="text/css">
-	</head>
 <body>
 	<div class="topnav" id="myTopnav">
 		<a href="/" id="home-float-left">NOPE</a>
@@ -54,7 +23,6 @@
 			<i class="fa fa-bars"></i>
 		</a>
 	</div>
->>>>>>> upstream/master
 	<div class="ui fluid container  desktop-form-container">
 		<div id="main-desktop-form2">
 		</div>
@@ -62,243 +30,238 @@
 			ADD A PLACE
 		</div>
 		<form name="addForm" id="addForm" onsubmit="return getRatings();">
-		<div class="ui form desktop-form">
-			<div class="field">
-				<label>Street</label>
-				<input id="street" name="street" placeholder="Street Address" type="text">
+			<div class="ui form desktop-form">
+				<div class="field">
+					<label>Street</label>
+					<input id="street" name="street" placeholder="Street Address" type="text">
+				</div>
+				<div class="field">
+					<label>City</label>
+					<input id="city" name="city" placeholder="City" type="text">
+				</div>
+				<div class="field">
+					<label>State</label>
+					<input id="state" name="state" placeholder="State" type="text">
+				</div>
+				<div class="field">
+					<label>Zip Code</label>
+					<input id="zip" name="zip" placeholder="Zip Code" type="text">
+				</div>
 			</div>
-			<div class="field">
-				<label>City</label>
-				<input id="city" name="city" placeholder="City" type="text">
+			<div class="ui horizontal divider header review-header">
+				ADD A REVIEW
 			</div>
-			<div class="field">
-				<label>State</label>
-				<input id="state" name="state" placeholder="State" type="text">
-			</div>
-			<div class="field">
-				<label>Zip Code</label>
-				<input id="zip" name="zip" placeholder="Zip Code" type="text">
-			</div>
-		</div>
-		<div class="ui horizontal divider header review-header">
-			ADD A REVIEW
-		</div>
-		<div class="desktop-form-container">
-			<div class="ui form desktop-form2">
-				<div class="inline fields">
-					<label id="food">Food:</label>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency1" value="1" id="1" >
-							<label>1</label>
+			<div class="desktop-form-container">
+				<div class="ui form desktop-form2">
+					<div class="inline fields">
+						<label id="food">Food:</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency1" value="1" id="1">
+								<label>1</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency1" value="2" id="2">
+								<label>2</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency1" value="3" id="3">
+								<label>3</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency1" value="4" id="4">
+								<label>4</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency1" value="5" id="5">
+								<label>5</label>
+							</div>
 						</div>
 					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency1" value="2" id="2">
-							<label>2</label>
+					<div class="inline fields">
+						<label id="drinks">Drinks:</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency2" value="1" id="1">
+								<label>1</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency2" value="2" id="2">
+								<label>2</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency2" value="3" id="3">
+								<label>3</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency2" value="4" id="4">
+								<label>4</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency2" value="5" id="5">
+								<label>5</label>
+							</div>
 						</div>
 					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency1" value="3" id="3">
-							<label>3</label>
+					<div class="inline fields">
+						<label id="atmosphere">Atmosphere:</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency3" value="1" id="1">
+								<label>1</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency3" value="2" id="2">
+								<label>2</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency3" value="3" id="3">
+								<label>3</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency3" value="4" id="4">
+								<label>4</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency3" value="5" id="5">
+								<label>5</label>
+							</div>
 						</div>
 					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency1" value="4" id="4">
-							<label>4</label>
+					<div class="inline fields">
+						<label id="staff">Staff:</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency4" value="1" id="1">
+								<label>1</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency4" value="2" id="2">
+								<label>2</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency4" value="3" id="3">
+								<label>3</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency4" value="4" id="4">
+								<label>4</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency4" value="5" id="5">
+								<label>5</label>
+							</div>
 						</div>
 					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency1" value="5" id="5">
-							<label>5</label>
+					<div class="inline fields">
+						<label id="cleanliness">Cleanliness:</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency5" value="1" id="1">
+								<label>1</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency5" value="2" id="2">
+								<label>2</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency5" value="3" id="3">
+								<label>3</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency5" value="4" id="4">
+								<label>4</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency5" value="5" id="5">
+								<label>5</label>
+							</div>
+						</div>
+					</div>
+					<div class="inline fields">
+						<label id="parking">Parking:</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency6" value="1" id="1">
+								<label>1</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency6" value="2" id="2">
+								<label>2</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency6" value="3" id="3">
+								<label>3</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency6" value="4" id="4">
+								<label>4</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="frequency6" value="5" id="5">
+								<label>5</label>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="inline fields">
-					<label id="drinks">Drinks:</label>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency2" value="1" id="1">
-							<label>1</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency2" value="2" id="2">
-							<label>2</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency2" value="3" id="3">
-							<label>3</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency2" value="4" id="4">
-							<label>4</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency2" value="5" id="5">
-							<label>5</label>
-						</div>
-					</div>
-				</div>
-				<div class="inline fields">
-					<label id="atmosphere">Atmosphere:</label>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency3" value="1" id="1">
-							<label>1</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency3" value="2" id="2">
-							<label>2</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency3" value="3" id="3">
-							<label>3</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency3" value="4" id="4">
-							<label>4</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency3" value="5" id="5">
-							<label>5</label>
-						</div>
-					</div>
-				</div>
-				<div class="inline fields">
-					<label id="staff">Staff:</label>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency4" value="1" id="1">
-							<label>1</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency4" value="2" id="2">
-							<label>2</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency4" value="3" id="3">
-							<label>3</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency4" value="4" id="4">
-							<label>4</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency4" value="5" id="5">
-							<label>5</label>
-						</div>
-					</div>
-				</div>
-				<div class="inline fields">
-					<label id="cleanliness">Cleanliness:</label>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency5" value="1" id="1">
-							<label>1</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency5" value="2" id="2">
-							<label>2</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency5" value="3" id="3">
-							<label>3</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency5" value="4" id="4">
-							<label>4</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency5" value="5" id="5">
-							<label>5</label>
-						</div>
-					</div>
-				</div>
-				<div class="inline fields">
-					<label id="parking">Parking:</label>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency6" value="1" id="1">
-							<label>1</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency6" value="2" id="2">
-							<label>2</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency6" value="3" id="3">
-							<label>3</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency6" value="4" id="4">
-							<label>4</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui radio checkbox">
-							<input type="radio" name="frequency6" value="5" id="5">
-							<label>5</label>
-						</div>
-					</div>
+				<div class="actions">
+					<button class="ui button" id="sendAddress" type="submit">
+						Add
+					</button>
 				</div>
 			</div>
-			<div class="actions">
-				<button class="ui button" id="sendAddress" type="submit" > 
-					 Add
-				</button>
-			</div>
-		</div>
 		</form>
 	</div>
-<<<<<<< HEAD
-=======
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
-	<script src="assets/semantic/dist/semantic.min.js" type="text/javascript"></script>
->>>>>>> upstream/master
 	<script src="assets/js/restaurant.js" type="text/javascript"></script>
-	<script src="assets/js/location.js" type="text/javascript"></script>
+	<!-- <script src="assets/js/location.js" type="text/javascript"></script> -->
 </body>
 
 </html>

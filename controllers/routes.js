@@ -38,15 +38,9 @@ router.post("/user_coords", function(req, res) {
 });
 
 
-<<<<<<< HEAD
-// **** GET USER DATA PAGE *****
-router.get("/app/:lat/:lng", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/app.html"))
-=======
 // // **** GET USER DATA PAGE *****
 router.get("/map/:lat/:lng", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/map.html"))
->>>>>>> upstream/master
 });
 
 // **** DEFAULT ROUTE **** (Goes in server file)
