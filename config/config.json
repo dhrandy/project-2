@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": "root123123",
+=======
     "password": "2245620",
+>>>>>>> upstream/master
     "database": "restaurantsDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
