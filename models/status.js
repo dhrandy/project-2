@@ -2,11 +2,12 @@ module.exports = function (sequelize, DataTypes) {
 
 var Statuses = sequelize.define("Statuses", {
 
-  name: {
+  busyOrNot: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    defaultValue: false
   },
-})
+});
+
 
 Statuses.associate = function(models) {
   Statuses.belongsTo(models.Restaurant, {

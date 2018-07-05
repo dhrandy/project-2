@@ -9,7 +9,7 @@ module.exports = function(app) {
       query.RestaurantId=req.query.restaurant_id;
     }
     db.Rating.findAll({
-      where:query,
+      where: query,
       include: [db.Restaurant]
     }).then(function(dbRating){
       res.json(dbRating);
@@ -19,8 +19,9 @@ module.exports = function(app) {
 
   //Post route for saving a new rating
   app.post("/api/ratings", function(req, res){
-    db.Post.create(req.body).then(function(dbRating){
+    db.Rating.create(req.body).then(function(dbRating){
       res.json(dbRating);
+
     })
   })
 

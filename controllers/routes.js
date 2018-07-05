@@ -39,7 +39,7 @@ router.post("/user_coords", function(req, res) {
 });
 
 
-// // **** GET USER DATA PAGE *****
+// **** GET USER DATA PAGE *****
 router.get("/app/:lat/:lng", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/app.html"))
 });
