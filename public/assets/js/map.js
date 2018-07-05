@@ -21,8 +21,10 @@ $(document).ready(function () {
         //**** DEFAULT ZOOM FOR MAP****
 
         var options = {
-            zoom: 8,
+            zoom: 14,
             center: coords
+            //  {lat: 35.2271, lng: -80.8431} 
+            //  center of Charlotte
         }
         console.log("work1")
 
@@ -40,10 +42,7 @@ $(document).ready(function () {
         // })
 
         var markers = [{
-            coords: {
-                lat: 35.2271,
-                lng: -80.8431
-            },
+            coords,
             image: "",
             content: `
         <div>

@@ -3,6 +3,17 @@ var path = require("path")
 var router = express.Router()
 var orm = require("../config/orm.js")
 
+// **** ADD A PLACE PAGE ****
+router.post("/add", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/add-a-place.html"))
+}) 
+
+// **** FIND A PLACE PAGE ****
+router.post("/find", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/find-a-place.html"))
+}) 
+
+
 // **** AUTHENTICATE USER ****
 router.post("/authenticate", function (req, res) {
     res.send("AUTHENTICATE")
