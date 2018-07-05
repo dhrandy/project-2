@@ -5,25 +5,42 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    location: {
+    street: {
       type: DataTypes.STRING,
       allowNull: false,
     },
 
-    status: {
-      type: DataTypes.BOOLEAN,
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    zip: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
 
   });
 
   Restaurant.associate = function (models) {
-    Restaurant.hasMany(models.Rating, {
+    Restaurant.hasMany(models.Rating,  {
+      onDelete: "cascade",
+      //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
+      hooks: true
+
+    });
+    Restaurant.hasMany(models.Statuses,  {
       onDelete: "cascade",
       //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
       hooks: true
     });
+
+   
   
   }
 

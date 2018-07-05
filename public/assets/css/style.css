@@ -59,6 +59,7 @@ a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     height: 300px;
+    box-shadow: 0px 6px 15px -6px grey;
 }
 
 #main-desktop-form2 {
@@ -67,6 +68,7 @@ a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     height: 300px;
+    box-shadow: 0px 6px 15px -6px grey;
 }
 
 /* Bottom Image */
@@ -302,4 +304,10 @@ div.row {
 
 .ui.horizontal.divider {
     margin-bottom: 30px;
+}
+
+
+
+#map {
+    height:600px;
 }

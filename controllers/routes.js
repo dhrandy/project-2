@@ -1,7 +1,6 @@
 var express = require("express")
 var path = require("path")
 var router = express.Router()
-var orm = require("../config/orm.js")
 
 // **** ADD A PLACE PAGE ****
 router.post("/add-a-place", function (req, res) {
@@ -20,7 +19,7 @@ router.post("/authenticate", function (req, res) {
 }) 
 
 // **** USER PROFILE ****
-router.get("/app", function (req, res) {
+router.get("/map", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/app.html"))
     
 }) 
@@ -44,7 +43,7 @@ router.get("/app/:lat/:lng", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/app.html"))
 });
 
-// **** DEFAULT ROUTE ****
+// **** DEFAULT ROUTE **** (Goes in server file)
 // router.get("*", function (req, res) {
 //     res.sendFile(path.join(__dirname, "../public/index.html"))
 // }) 
