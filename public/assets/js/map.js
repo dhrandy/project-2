@@ -1,60 +1,115 @@
-var map
-var coords
 var markers = []
 
-$.ajax({
-    url: "/app/lat:/lng:",
-    method: "GET"
-}).then(function(req, res) {
-    coords = {
-        lat: req.params.lat,
-        lng: req.parms.lng
-    }
-    console.log(coords)
-    initMap()
-})
+var pathArray = window.location.pathname.split( '/' )
+
+LAT = Number(pathArray[2])
+LNG = Number(pathArray[3])
+
+coords = {
+    lat: LAT,
+    lng: LNG
+}
+
+console.log(coords)
+
+var map
 
 function initMap() {
     //**** DEFAULT ZOOM FOR MAP****
-
+    
     var options = {
-        zoom: 10,
-        center: {coords}
+        zoom: 8,
+        center: coords
     }
 
     map = new google.maps.Map(document.getElementById('map'), options)
 
     //****LISTEN FOR MAP CLICK TO ADD MARKER****
 
-    google.maps.event.addListener(map, "click", function(event) {
-        addMarker({coords:event.latLng})
-    })
+    // google.maps.event.addListener(map, "click", function(event) {
+    //     addMarker({coords:event.latLng})
+    // })
 
-    // **** RUN FUNCTIONS TO SHOW LOCATION ****
-    sendLocation()
+    var markers = [
+    {
+        coords:{lat: 35.2271, lng: -80.8431},
+        image: "",
+        content:`
+        <div>
+            <h1>SOME PLACE</h1>
+            <button class="ui compact red button">BUSY</button>
+            <button class="ui compact green button">NOT BUSY</button>
+        </div>
+        <div class="ui container">
+        <div class="ui grid">
+            <div class="ui row collapse">
+                <div class="ui column">Food:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="food" data-rating="5" data-max-rating="5"></span>
+                </div>
+            </div>
 
-    for(var i = 0; i < markers.length; i++) {
-            addMarker(markers[i])
+            <div class="ui row collapse">
+                <div class="ui column">Drinks:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="drinks" data-rating="5" data-max-rating="5"></span>
+                </div>
+            </div>
+
+            <div class="ui row collapse">
+                <div class="ui column">Atmosphere: </div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="atmosphere" data-rating="4" data-max-rating="5"></span>
+                </div>
+            </div>
+
+            <div class="ui row collapse">
+                <div class="ui column">Staff:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="staff" data-rating="5" data-max-rating="5"></span>
+                </div>
+            </div>
+
+            <div class="ui row collapse">
+                <div class="ui column">Cleanliness:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="cleanliness" data-rating="4" data-max-rating="5"></span>
+                </div>
+            </div>
+            <div class="ui row collapse">
+                <div class="ui right column">Parking:</div>
+                <div class="ui column">
+                    <span class="ui rating r-space" id="parking" data-rating="5" data-max-rating="5"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        `
+    }]
+
+    for (var i = 0; i < markers.length; i++) {
+        addMarker(markers[i])
     }
 
-    function addMarker(props){
+    function addMarker(props) {
 
         // ****CHECK FOR ICON****
 
-        if(props.icon) {
+        if (props.icon) {
             marker.setIcon(props.icon)
         }
 
         // ****VALIDATE CONTENT****
 
-        if(props.content) {
-            var infoWindow = new google.maps.InfoWindow ({
-            content: props.content
+        if (props.content) {
+            var infoWindow = new google.maps.InfoWindow({
+                content: props.content
             })
         }
 
-        var marker = new google.maps.Marker ({
-            position: coords,
+        var marker = new google.maps.Marker({
+            position: props.coords,
             map: map,
             icon: props.image,
             content: props.content
@@ -66,4 +121,5 @@ function initMap() {
             infoWindow.open(map, marker)
         })
     }
-}
+
+}//****end of map****

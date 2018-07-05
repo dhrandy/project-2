@@ -24,5 +24,5 @@ var orm = {
             })
             console.log("DATA SENT")
         })
-    }//End get Lo
+    }//End get Locationdata
 }
