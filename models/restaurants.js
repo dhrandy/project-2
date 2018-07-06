@@ -6,7 +6,10 @@ module.exports = function (sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    
+    // restname: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
     street: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,6 +29,15 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+
+    // laditude: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    // },
+    // longitude: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // }
 
   });
 
