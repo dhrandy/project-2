@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // var nameInput = $("#name");
   var streetInput = $("#street");
   var cityInput = $("#city");
   var stateInput = $("#state");
@@ -7,10 +8,11 @@ $(document).ready(function() {
   $("#sendAddress").on("click", function handleFormSubmit(event) {
     event.preventDefault()
     console.log("Karina's button clicked")
-    // if(!streetInput.val().trim || !cityInput.val().trim || !stateInput.val().trim || !zipInput.val().trim) {
-    //   return;
-    // }
+    if(!streetInput.val().trim || !cityInput.val().trim || !stateInput.val().trim || !zipInput.val().trim) {
+      return;
+    }
     var newRestaurant = {
+      // resname: nameInput.val().trim(),
       street: streetInput.val().trim(),
       city: cityInput.val().trim(),
       state: stateInput.val().trim(),
@@ -20,6 +22,7 @@ $(document).ready(function() {
     submitRestaurant(newRestaurant);
 
     getRatings();
+    
   });
 
   function getRatings() {
