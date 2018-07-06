@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS restaurantsDB;
-CREATE DATABASE restaurantsDB;
+-- DROP DATABASE IF EXISTS restaurantsDB;
+-- CREATE DATABASE restaurantsDB;
 
 USE restaurantsDB;

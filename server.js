@@ -1,3 +1,4 @@
+require("dotenv").config()
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
@@ -14,18 +15,22 @@ var PORT = process.env.PORT || 3000
 // **** SET STATIC FOLDER ****
 app.use(express.static(path.join(__dirname, "public")))
 
-// **** BODYPARSER*****
+// **** BODYPARSER MIDDLEWARE*****
+
+//parse application/json
 app.use(bodyParser.json())
+
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
+
 
 // ****ROUTES****
 app.use(routes);
 require("./controllers/restaurant-api.js")(app);
+require("./controllers/rating-api.js")(app);
+require("./controllers/status.js")(app);
+router = require("./controllers/routes.js")
 
-// **** INDEX ROUTE ****
-app.get("/", function (req, res) {
-    res.send("Invalid end point")
-}) 
 
 // **** DATABASE CONNECTION ****
 db.sequelize.sync({force: true}).then(function() {
