@@ -19,8 +19,9 @@ $(document).ready(function () {
         //**** DEFAULT ZOOM FOR MAP****
 
         var options = {
-            zoom: 14,
+            zoom: 16,
             center: coords
+            // {lat: 35.2271, lng: -80.8431} 
         }
 
         map = new google.maps.Map(document.getElementById('map'), options)

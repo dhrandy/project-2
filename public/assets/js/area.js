@@ -1,8 +1,8 @@
 $(document).ready(function () {
-
-    console.log("Show Map Working")
-
+    var map
     var markers = []
+    var locationArray = []
+
     var pathArray = window.location.pathname.split('/')
 
     LAT = Number(pathArray[2])
@@ -13,8 +13,6 @@ $(document).ready(function () {
         lng: LNG
     }
 
-    console.log(coords)
-
     var map
 
     function initMap() {
@@ -22,85 +20,72 @@ $(document).ready(function () {
 
         var options = {
             zoom: 14,
-            center:
+            center: 
+            // coords
              {lat: 35.2271, lng: -80.8431} 
-            //  center of Charlotte
         }
-        console.log("work1")
 
         map = new google.maps.Map(document.getElementById('map'), options)
 
-        console.log(options)
-        console.log(map)
+        getResults()
 
-        console.log("work2")
-
-        //****LISTEN FOR MAP CLICK TO ADD MARKER****
-
-        // google.maps.event.addListener(map, "click", function(event) {
-        //     addMarker({coords:event.latLng})
-        // })
-
-        var markers = [{
-            coords,
-            image: "",
-            content: `
-        <div>
-            <h1>SOME PLACE</h1>
-            <button class="ui compact red button">BUSY</button>
-            <button class="ui compact green button">NOT BUSY</button>
-        </div>
-        <div class="ui container">
-        <div class="ui grid">
-            <div class="ui row collapse">
-                <div class="ui column">Food:</div>
-                <div class="ui column">
-                    <span id="food-rating"></span><span> Stars</span>
-                </div>
-            </div>
-
-            <div class="ui row collapse">
-                <div class="ui column">Drinks:</div>
-                <div class="ui column">
-                    <span class="ui rating r-space" id="drinks" data-rating="5" data-max-rating="5"></span>
-                </div>
-            </div>
-
-            <div class="ui row collapse">
-                <div class="ui column">Atmosphere: </div>
-                <div class="ui column">
-                    <span class="ui rating r-space" id="atmosphere" data-rating="4" data-max-rating="5"></span>
-                </div>
-            </div>
-
-            <div class="ui row collapse">
-                <div class="ui column">Staff:</div>
-                <div class="ui column">
-                    <span class="ui rating r-space" id="staff" data-rating="5" data-max-rating="5"></span>
-                </div>
-            </div>
-
-            <div class="ui row collapse">
-                <div class="ui column">Cleanliness:</div>
-                <div class="ui column">
-                    <span class="ui rating r-space" id="cleanliness" data-rating="4" data-max-rating="5"></span>
-                </div>
-            </div>
-            <div class="ui row collapse">
-                <div class="ui right column">Parking:</div>
-                <div class="ui column">
-                    <span class="ui rating r-space" id="parking" data-rating="5" data-max-rating="5"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-        `
-        }]
-
-        for (var i = 0; i < markers.length; i++) {
-            addMarker(markers[i])
+        console.log(locationArray)
+        
+        for (var i = 0; i < locationArray.length; i++) {
+            console.log("LOOP MAKERS RAN")
+            addMarker(locationArray[i])
         }
+        // **** Get the data out of the data base ****
+        function getResults() {
+            $.ajax({
+                url: "/api/restaurants",
+                method: "GET"
+            })
+            .then(function (result) {
+                for (i = 0; i < result.length; i++) {
+                    // console.log(result[i])
+                    getCoords(result[i])
+                }
+            })
+    
+        }
+        // ****  Creates a new object to add in coordinates  ****
+        function getCoords(x) {
+            var locationData = {
+                name: x.restname,
+                street: x.street,
+                city: x.city,
+                state: x.state,
+                zip: x.zip,
+                latLng: {
+                    lat:0,
+                    lng:0 
+                }
+                
+            }
+    
+            var streetArray = []
+            streetArray = locationData.street.split(" ").join("+")
+    
+            $.ajax({
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArray + "," + locationData.city + "," + locationData.state + "&key=AIzaSyAWZ_iRjVcTuqPP0iOTNZfwvTU5nazcOyw",
+                    method: "GET"
+            })
+            .then(function (result) {
+                for (i = 0; i < result.results.length; i++) {
+                    coords = result.results[i].geometry.location
+    
+                    locationData.latLng = coords
+                    locationArray.push(locationData)
+                }
+                for (var i = 0; i < locationArray.length; i++) {
+                    addMarker(locationArray[i])
+                }
+            })
 
+    
+        }
+        //  ****  Takes in an object to populate markers on the map and add a click event for the info windows ****
         function addMarker(props) {
 
             // ****CHECK FOR ICON****
@@ -109,17 +94,17 @@ $(document).ready(function () {
             }
 
             // ****VALIDATE CONTENT****
-            if (props.content) {
+            if (props.name) {
                 var infoWindow = new google.maps.InfoWindow({
-                    content: props.content
+                    content: "<h4>" + props.name + "</h4>" +  "<p>" + props.street + "<p>" + props.city + ", " + props.state + ", " + props.zip + "<p>" + "<button class='ui compact red button'>BUSY</button>" + " " + "<button class='ui compact green button'>NOT BUSY</button>"
                 })
             }
 
             var marker = new google.maps.Marker({
-                position: props.coords,
+                position: props.latLng,
                 map: map,
                 icon: props.image,
-                content: props.content
+                content:""
             })
 
             //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
@@ -127,15 +112,17 @@ $(document).ready(function () {
                 infoWindow.open(map, marker)
             })
         }
+
     } //****end of map****
-    rating()
+    // rating()
+
     initMap()
 
-    function rating() {
-        //display rating
-        $('.ui.rating')
-            .rating();
-        console.log("rating")
-    }
+    // function rating() {
+    //     //display rating
+    //     $('.ui.rating')
+    //         .rating();
+    //     // console.log("rating")
+    // }
 
 })
