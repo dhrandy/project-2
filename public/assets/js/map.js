@@ -20,8 +20,9 @@ $(document).ready(function () {
 
         var options = {
             zoom: 16,
-            center: coords
-            // {lat: 35.2271, lng: -80.8431} 
+            center: 
+            coords
+            //  {lat: 35.2271, lng: -80.8431} 
         }
 
         map = new google.maps.Map(document.getElementById('map'), options)
