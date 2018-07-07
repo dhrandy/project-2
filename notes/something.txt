@@ -17,3 +17,5 @@ config.json
     "dialect": "mysql"
   },
 
+  local port 3000
+
