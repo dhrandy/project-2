@@ -94,7 +94,7 @@ $(document).ready(function () {
             // ****VALIDATE CONTENT****
             if (props.name) {
                 var infoWindow = new google.maps.InfoWindow({
-                    content: "<h4>" + props.name + "</h4>" +  "<p>" + props.street + "<p>" + props.city + ", " + props.state + ", " + props.zip + "<p>" + "<button class='ui compact red button'>BUSY</button>" + " " + "<button class='ui compact green button'>NOT BUSY</button>"
+                    content: "<h4>" + props.name + "</h4>" +  "<p>" + props.street + "<p>" + props.city + ", " + props.state + ", " + props.zip + "<p>" + "<button class='ui compact red button'>BUSY</button>" + " " + "<button class='ui compact green button'>NOT BUSY</button>" + "<p><ul>" + "<li>" + "FOOD: " + "&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;" + "<li>" + "DRINKS: "+ "&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;" + "<li>" + "ATMOSPHERE: "+ "&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;" + "<li>" + "STAFF: " + "&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;"+ "<li>" + "CLEANLINESS" + "&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;"
                 })
             }
 
