@@ -1,4 +1,4 @@
--- DROP DATABASE IF EXISTS restaurantsDB;
--- CREATE DATABASE restaurantsDB;
+-- DROP DATABASE IF EXISTS qdq0he7f35n31trd;
+-- CREATE DATABASE qdq0he7f35n31trd;
 
-USE restaurantsDB;
+USE qdq0he7f35n31trd;
