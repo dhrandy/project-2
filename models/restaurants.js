@@ -1,10 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
 
   var Restaurant = sequelize.define("Restaurant", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   primaryKey: true
+    // },
+    
     street: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,17 +32,12 @@ module.exports = function (sequelize, DataTypes) {
     Restaurant.hasMany(models.Rating,  {
       onDelete: "cascade",
       //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
-      hooks: true
-
+      hooks: false
     });
     Restaurant.hasMany(models.Statuses,  {
       onDelete: "cascade",
-      //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
       hooks: true
     });
-
-   
-  
   }
 
 

@@ -3,12 +3,12 @@ var path = require("path")
 var router = express.Router()
 
 // **** ADD A PLACE PAGE ****
-router.post("/add-a-place", function (req, res) {
+router.post("/add", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/add-a-place.html"))
 }) 
 
 // **** FIND A PLACE PAGE ****
-router.post("/find-a-place", function (req, res) {
+router.post("/find", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/find-a-place.html"))
 }) 
 
@@ -20,7 +20,7 @@ router.post("/authenticate", function (req, res) {
 
 // **** USER PROFILE ****
 router.get("/map", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/app.html"))
+    res.sendFile(path.join(__dirname, "../public/map.html"))
     
 }) 
 
@@ -28,6 +28,16 @@ router.get("/map", function (req, res) {
 router.get("/review", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/review.html"));
 });
+
+// **** ADD A PLACE PAGE ****
+router.post("/add", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/add-a-place.html"))
+}) 
+
+// **** FIND A PLACE PAGE ****
+router.post("/find", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/find-a-place.html"))
+}) 
 
 // **** LISTEN FOR POST USER DATA PAGE *****
 router.post("/user_coords", function(req, res) {
