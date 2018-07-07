@@ -10,7 +10,7 @@ var routes = require("./controllers/routes")
 app.use(methodOverride("_method"));
 
 // ****PORT****
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 3306
 
 // **** SET STATIC FOLDER ****
 app.use(express.static(path.join(__dirname, "public")))
