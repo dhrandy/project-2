@@ -10,7 +10,7 @@ var routes = require("./controllers/routes")
 app.use(methodOverride("_method"));
 
 // ****PORT****
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 3306
 
 // **** SET STATIC FOLDER ****
 app.use(express.static(path.join(__dirname, "public")))
@@ -30,6 +30,10 @@ require("./controllers/restaurant-api.js")(app);
 require("./controllers/rating-api.js")(app);
 // require("./controllers/status.js")(app);
 router = require("./controllers/routes.js")
+
+app.listen(PORT, function() {
+    console.log("NOPE listening on PORT " + PORT)
+});
 
 
 // **** DATABASE CONNECTION ****

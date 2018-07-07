@@ -4,8 +4,7 @@
     "password": "vldpaqs6e7p8hlr7",
     "database": "qdq0he7f35n31trd",
     "host": "o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "postgres",
-    "use_env_variable": "mysql://rgqk9xbt646bnoub:vldpaqs6e7p8hlr7@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/qdq0he7f35n31trd"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
