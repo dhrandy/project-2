@@ -16,7 +16,7 @@ function sendLocation() {
         locationData.street = streetArray
 
         $.ajax({
-                url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + locationData.street + "," + locationData.city + "," + locationData.state + "&key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg",
+                url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + locationData.street + "," + locationData.city + "," + locationData.state + "&key=AIzaSyAWZ_iRjVcTuqPP0iOTNZfwvTU5nazcOyw",
                 method: "GET"
             })
             .then(function (result) {
