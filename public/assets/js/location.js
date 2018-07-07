@@ -25,7 +25,7 @@ function sendLocation() {
                 }
                 console.log(coords)
 
-                window.location.assign("/app/" + coords.lat + "/" + coords.lng)
+                window.location.assign("/map/" + coords.lat + "/" + coords.lng)
             })
     })
 }

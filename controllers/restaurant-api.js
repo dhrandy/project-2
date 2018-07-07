@@ -5,10 +5,10 @@ module.exports = function(app) {
   // GET route for getting all restaurants
   app.get("/api/restaurants", function(req, res) {
     db.Restaurant.findAll({
-       include: [db.Rating, db.Statuses]
+      //  include: [db.Rating, db.Statuses]
     })
     .then(function(dbRestaurant) {
-       console.log(dbRestaurant);
+      //  console.log(dbRestaurant);
       res.json(dbRestaurant);
     });
   })
@@ -30,6 +30,7 @@ module.exports = function(app) {
     console.log(req.body);
     
     db.Restaurant.create({
+      restname: req.body.restname,
       street: req.body.street,
       city: req.body.city,
       state: req.body.state,
@@ -44,6 +45,5 @@ module.exports = function(app) {
   });  
 
 };
-
 
 

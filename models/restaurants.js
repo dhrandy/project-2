@@ -4,12 +4,13 @@ module.exports = function (sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      allowNull: false,
     },
-    // restname: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    restname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     street: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,31 +29,22 @@ module.exports = function (sequelize, DataTypes) {
     zip: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-
-    // laditude: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    // },
-    // longitude: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false
-    // }
-
+    }
   });
 
   Restaurant.associate = function (models) {
     Restaurant.hasMany(models.Rating,  {
-      onDelete: "cascade",
       //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
-      hooks: true,
-      foreignKey: "id"
-      
+      onDelete: "cascade",    
+      foreignKey: {
+        name: "id"
+    },
+
     });
-    Restaurant.hasMany(models.Statuses,  {
-      onDelete: "cascade",
-      hooks: true
-    });
+    // Restaurant.hasMany(models.Statuses,  {
+    //   onDelete: "cascade",
+    //   hooks: true
+    // });
   }
 
 

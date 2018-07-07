@@ -112,7 +112,7 @@ $(document).ready(function () {
         }
 
     } //****end of map****
-    rating()
+    // rating()
 
     initMap()
 
