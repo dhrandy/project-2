@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
         name: "id"
     },
 
-  //   });
+    });
     // Restaurant.hasMany(models.Statuses,  {
     //   onDelete: "cascade",
     //   hooks: true
