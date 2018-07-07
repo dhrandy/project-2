@@ -10,7 +10,7 @@ var routes = require("./controllers/routes")
 app.use(methodOverride("_method"));
 
 // ****PORT****
-var PORT = process.env.PORT || 3306
+var port = process.env.PORT || 3306
 
 // **** SET STATIC FOLDER ****
 app.use(express.static(path.join(__dirname, "public")))
@@ -34,7 +34,7 @@ router = require("./controllers/routes.js")
 
 // **** DATABASE CONNECTION ****
 db.sequelize.sync({force: true}).then(function() {
-    app.listen(PORT, function() {
+    app.listen(port, function() {
         console.log("NOPE listening on PORT " + PORT)
     });
 });
