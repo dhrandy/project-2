@@ -20,9 +20,13 @@ router.post("/authenticate", function (req, res) {
 }) 
 
 // **** USER PROFILE ****
+router.get("/area", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/map-area.html"))
+}) 
+
+// **** USER PROFILE ****
 router.get("/map", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/map.html"))
-    
 }) 
 
 // **** GET REVIEW PAGE ****
