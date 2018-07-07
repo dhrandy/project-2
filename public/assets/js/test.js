@@ -30,8 +30,34 @@ $(document).ready(function(){
     restaurantContainer.append(restaurantsToAdd);
   }
   function createNewRow(restaurant) {
-    var formattedData = new Date(restaurant.createdAt);
-    formattedData = moment(formattedData).format("MMMM Do YYYY, h:mm:ss a");
+    var formattedDate = new Date(restaurant.createdAt);
+    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    var newRestaurantCard = $("<div>");
+    newRestaurantCard.addClass("card");
+    var newRestaurantHeading = $("<div>");
+    newRestaurantHeading.addClass("card-header");
+    // var newPostDate = $("<small>");
+    var newRestaurantstreet =$("<h2>");
+    var newRestaurantcity =$("<h2>");
+    var newRestaurantstate =$("<h2>");
+    var newRestaurantzip =$("<h2>");
+    var newRestaurantCardBody = $("<div>");
+    newRestaurantCardBody.addClass("card-body");
+    var newRestaurantBody= $("<p>")
+    newRestaurantstreet.text = (restaurant.street);
+    newRestaurantcity.text = (restaurant.city);
+    newRestaurantstate.text = (restaurant.state);
+    newRestaurantzip.text = (restaurant.zip);
+    // newPostDate.text(formattedDate);
+    return newRestaurantCard;
+    newRestaurantHeading.append(newRestaurantstreet);
+    newRestaurantHeading.append(newRestaurantcity);
+    newRestaurantHeading.append(newRestaurantstate);
+    newRestaurantHeading.append(newRestaurantcity);
+    newRestaurantCardBody.append(newRestaurantBody);
+    newRestaurant
+
+
   }
 
 
