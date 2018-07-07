@@ -32,15 +32,15 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Restaurant.associate = function (models) {
-    Restaurant.hasMany(models.Rating,  {
-      //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
-      onDelete: "cascade",    
-      foreignKey: {
-        name: "id"
-    },
+  // Restaurant.associate = function (models) {
+  //   Restaurant.hasMany(models.Rating,  {
+  //     //http://docs.sequelizejs.com/manual/tutorial/hooks.html#associations
+  //     onDelete: "cascade",    
+  //     foreignKey: {
+  //       name: "id"
+  //   },
 
-    });
+  //   });
     // Restaurant.hasMany(models.Statuses,  {
     //   onDelete: "cascade",
     //   hooks: true
