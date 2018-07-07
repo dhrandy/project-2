@@ -116,11 +116,11 @@ $(document).ready(function () {
 
     initMap()
 
-    function rating() {
-        //display rating
-        $('.ui.rating')
-            .rating();
-        // console.log("rating")
-    }
+    // function rating() {
+    //     //display rating
+    //     $('.ui.rating')
+    //         .rating();
+    //     // console.log("rating")
+    // }
 
 })
