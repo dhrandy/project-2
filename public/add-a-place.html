@@ -29,22 +29,22 @@
 			ADD A PLACE
 		</div>
 		<form name="addForm" id="addForm" onsubmit="return getRatings();">
-			<div class="ui form desktop-form">
-				<div class="field">
-					<label>Name</label>
-					<input id="name" name="name" placeholder="Restaurant Name" type="text">
-				</div>
-				<div class="field">
-					<label>Street</label>
-					<input id="street" name="street" placeholder="Street Address" type="text">
-				</div>
-				<div class="field">
-					<label>City</label>
-					<input id="city" name="city" placeholder="City" type="text">
-				</div>
-				<div class="field">
-					<label>State</label>
-					<input id="state" name="state" placeholder="State" type="text">
+		<div class="ui form desktop-form">
+			<div class="field">
+				<label>Restaurant</label>
+				<input id="restaurant" name="restaurant" placeholder="restaurant" type="text">
+			</div>
+			<div class="field">
+				<label>Street</label>
+				<input id="street" name="street" placeholder="Street Address" type="text">
+			</div>
+			<div class="field">
+				<label>City</label>
+				<input id="city" name="city" placeholder="City" type="text">
+			</div>
+			<div class="field">
+				<label>State</label>
+				<input id="state" name="state" placeholder="State" type="text">
 				</div>
 				<div class="field">
 					<label>Zip Code</label>
@@ -221,13 +221,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="inline fields">
-						<label id="parking">Parking:</label>
-						<div class="field">
-							<div class="ui radio checkbox">
-								<input type="radio" name="frequency6" value="1" id="1">
-								<label>1</label>
-							</div>
+				</div>
+				<!-- <div class="inline fields">
+					<label id="parking">Parking:</label>
+					<div class="field">
+						<div class="ui radio checkbox">
+							<input type="radio" name="frequency6" value="1" id="1">
+							<label>1</label>
+
 						</div>
 						<div class="field">
 							<div class="ui radio checkbox">
@@ -255,12 +256,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="actions">
-					<button class="ui button" id="sendAddress" type="submit">
-						Add
-					</button>
-				</div>
+			</div> -->
+			<div class="actions">
+				<button class="ui button" id="sendAddress" type="submit" > 
+					 Add
+				</button>
 			</div>
+		</div>
+
 		</form>
 	</div>
 

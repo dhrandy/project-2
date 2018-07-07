@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NOPE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/semantic/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" />
+    <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+
+</head>
+
+<body>
+    <div class="ui container fluid">
+        <div class="ui menu navbar">
+            <a href class="brand item">Nope</a>
+            <a href class="active item">App</a>
+            <a href class="item">Map</a>
+            <a href class="item">About</a>
+        </div>
+    </div>
+    <div class="ui container container-margin">
+        <button class="ui labeled icon button">
+            <i class="location arrow icon"></i>
+            Location
+        </button>
+    </div>
+
+
+    <div class="ui container container-margin">
+        <div id="map" style="height:600px"></div>
+
+        <div class = "map">
+            <img src = "assets/imgs/maps.jpg" class = "mapimg">
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+</body>
+<script>
+    var markers = []
+    var pathArray = window.location.pathname.split( '/' )
+    LAT = Number(pathArray[2])
+    LNG = Number(pathArray[3])
+    
+    coords = {
+        lat: LAT,
+        lng: LNG
+    }
+    console.log(coords)
+    var map
+    function initMap() {
+        //**** DEFAULT ZOOM FOR MAP****
+        
+        var options = {
+            zoom: 12,
+            center: coords
+        }
+        map = new google.maps.Map(document.getElementById('map'), options)
+        
+        //****LISTEN FOR MAP CLICK TO ADD MARKER****
+        // google.maps.event.addListener(map, "click", function(event) {
+        //     addMarker({coords:event.latLng})
+        // })
+
+        var markers = [
+        {
+            coords:{lat: 35.2271, lng: -80.8431},
+            image: "",
+            content:`
+            <div>
+                <h1>Charlotte</h1>
+                <button class="ui compact red button">BUSY</button>
+                <button class="ui compact green button">NOT BUSY</button>
+            </div>
+            `
+        }, 
+        {
+            coords:{lat: 35.2210244, lng: -80.8148537},
+            image: "",
+            content:`
+            <div>
+                <h1>MidWood</h1>
+                <button class="ui compact red button">BUSY</button>
+                <button class="ui compact green button">NOT BUSY</button>
+            </div>
+            `
+        },
+        {
+            coords:{lat: 35.2264103, lng: -80.84113599999999},
+            image: "",
+            content:`
+            <div>
+                <h1>Rooster's Wood Fired Kitchen II</h1>
+                <button class="ui compact red button">BUSY</button>
+                <button class="ui compact green button">NOT BUSY</button>
+            </div>
+            `
+        }
+        
+        ]
+        for (var i = 0; i < markers.length; i++) {
+            addMarker(markers[i])
+        }
+        function addMarker(props) {
+            // ****CHECK FOR ICON****
+            if (props.icon) {
+                marker.setIcon(props.icon)
+            }
+            // ****VALIDATE CONTENT****
+            if (props.content) {
+                var infoWindow = new google.maps.InfoWindow({
+                    content: props.content
+                })
+            }
+            var marker = new google.maps.Marker({
+                position: props.coords,
+                map: map,
+                icon: props.image,
+                content: props.content
+            })
+            //****ADD CLICK EVENT TO MARKERS TO CALL MARKER INFO****
+            marker.addListener("click", function() {
+                infoWindow.open(map, marker)
+            })
+        }
+    }//****end of map****
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5M_7o7Zb7AqxnEMLMz_h3dpGr1v8vTg&callback=initMap"></script>
+
+</html>
